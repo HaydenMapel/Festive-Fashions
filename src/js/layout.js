@@ -25,7 +25,7 @@ const Layout = () => {
 						<h1>Not found!</h1>
 					</Route>
 				</Switch>
-				<Footer />
+				<Footer className="fixed-bottom" />
 			</BrowserRouter>
 		</div>
 	);
