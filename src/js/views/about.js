@@ -7,8 +7,8 @@ import "../../styles/demo.scss";
 
 export const About = () => {
 	return (
-		<div className="bg-dark text-light h-100">
-			<div className="bg-secondary  h-50">
+		<div className="text-light h-100 blackBG" id="AboutMain">
+			<div className="darkBG" id="AboutSecondary">
 				<div className="container">
 					<h2 className="text-center p-4">Who Are We?</h2>
 					<div className="p-4">
@@ -19,7 +19,7 @@ export const About = () => {
 					</div>
 				</div>
 			</div>
-			<div className="container h-50">
+			<div className="container">
 				<h2 className=" text-center p-4">This Is Who We Are</h2>
 				<div className="p-4">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elementum vestibulum mi et consectetur.
