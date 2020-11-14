@@ -10,7 +10,7 @@ export const Contact = () => {
 
 	return (
 		<div className="container-fluid h-100 blackBG">
-			<div className="container darkBG pb-5 pt-3 px-5 text-light h-100">
+			<div className="container darkBG pb-5 pt-3 px-5 text-light m-4 border-primary text-center">
 				<h2 className="text-center">Contact Us</h2>
 				<form>
 					<div className="form-group">

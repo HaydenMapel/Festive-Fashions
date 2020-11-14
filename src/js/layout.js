@@ -31,7 +31,7 @@ const Layout = () => {
 					<Route exact path="/product">
 						<ProductList />
 					</Route>
-					<Route exact path="/product/:ID">
+					<Route exact path="/product/1">
 						<ProductDetail />
 					</Route>
 					<Route exact path="/cart">
