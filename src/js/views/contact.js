@@ -1,39 +1,89 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import emailjs from "emailjs-com";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.scss";
 
 export const Contact = () => {
 	const { store, actions } = useContext(Context);
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [subject, setSubject] = useState("");
+	const [message, setMessage] = useState("");
+
+	function sendEmail(e) {
+		e.preventDefault();
+
+		let templateParams = {
+			from_name: name,
+			reply_to: email,
+			subject: subject,
+			message: message
+		};
+
+		emailjs.send("service_72uiiku", "template_b62hw5i", templateParams, "user_livOtwA3ThXGO7bbt4ixB").then(
+			result => {
+				console.log(result.text);
+			},
+			error => {
+				console.log(error.text);
+			}
+		);
+		setName("");
+		setEmail("");
+		setSubject("");
+		setMessage("");
+	}
 
 	return (
 		<div className="container-fluid h-100 blackBG">
-			<div className="container darkBG pb-5 pt-3 px-5 text-light m-4 border-primary text-center">
+			<div className="container darkBG pb-5 pt-3 px-5 text-light m-4 mx-auto">
 				<h2 className="text-center">Contact Us</h2>
-				<form>
+				<form onSubmit={sendEmail}>
 					<div className="form-group">
-						<label htmlFor="contactFormControlInput1">Name</label>
-						<input type="text" className="form-control" id="ContactName" />
-					</div>
-					<div className="form-group">
-						<label htmlFor="contactFormControlInput2">Email address</label>
-						<input type="email" className="form-control" id="ContactEmail" />
-					</div>
-					<div className="form-group">
-						<label htmlFor="contactFormControlInput3">Subject</label>
-						<input type="text" className="form-control" id="contactSubject" />
+						<label>Name</label>
+						<input
+							type="text"
+							className="form-control"
+							id="ContactName"
+							value={name}
+							onChange={e => setName(e.target.value)}
+						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="exampleFormControlTextarea1">Message</label>
-						<textarea className="form-control" id="contactMessage" rows="5" />
+						<label>Email address</label>
+						<input
+							type="email"
+							className="form-control"
+							id="ContactEmail"
+							value={email}
+							onChange={e => setEmail(e.target.value)}
+						/>
 					</div>
-					<div className="text-center pt-3">
-						<button className="btn btn-danger rounded-pill btn-block" type="submit">
-							Submit form
-						</button>
+					<div className="form-group">
+						<label>Subject</label>
+						<input
+							type="text"
+							className="form-control"
+							id="contactSubject"
+							value={subject}
+							onChange={e => setSubject(e.target.value)}
+						/>
 					</div>
+					<div className="form-group">
+						<label>Message</label>
+						<textarea
+							className="form-control"
+							id="contactMessage"
+							rows="5"
+							value={message}
+							onChange={e => setMessage(e.target.value)}
+						/>
+					</div>
+					<button className="mt-4 btn btn-danger rounded-pill btn-block mx-auto" type="submit">
+						Submit form
+					</button>
 				</form>
 				{/* <div className="text-center">
 					<Link to="/">
