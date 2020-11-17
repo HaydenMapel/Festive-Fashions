@@ -78,7 +78,11 @@
 	},
 	"dependencies": {
 		"bootstrap": "^4.5.3",
+<<<<<<< HEAD
 		"emailjs-com": "^2.6.4",
+=======
+		"emailjs-com": "^2.6.3",
+>>>>>>> a30b86d0e939a3fa5baa3b6f4ef8c55432ad131b
 		"mdbreact": "^4.27.0",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
