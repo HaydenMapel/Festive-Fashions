@@ -1,0 +1,53 @@
+/* 
+    General Styles
+*/
+nav div ul{
+    list-style: none;
+    margin-bottom: auto;
+}
+nav div ul li{
+    display: inline;
+}
+.ml-auto{
+    display: inline-flex;
+    align-items: center;
+}
+#loginButton{
+    margin-right: 10px;
+}
+body{
+    //background-color: rgb(169, 235, 115);
+}
+
+.footer{
+    background-color: #37474F;
+    color: white;
+}
+.footer-copyright{
+    background-color: #263238;
+}
+.list-unstyled{
+    display: inline;
+}
+.footer-ul{
+    padding-left: 0px;
+}
+.footer-ul li a{
+    background-image: linear-gradient(to bottom left, rgb(247, 3, 174), rgb(243, 136, 211));
+    height: 42px;
+  width: 42px;
+// background-color: white;
+   color: white; // #ff4081
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  
+}
+#MDBFooter{
+    border-top: 2px solid rgb(247, 3, 174);
+}
+
+
+
