@@ -2,6 +2,13 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Home } from "./views/home";
+import { ProductList } from "./views/productList";
+import { ProductDetail } from "./views/productDetail";
+import { Cart } from "./views/cart";
+import { Login } from "./views/login";
+import { Register } from "./views/register";
+import { About } from "./views/about";
+import { Contact } from "./views/contact";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -20,6 +27,27 @@ const Layout = () => {
 				<Switch>
 					<Route exact path="/">
 						<Home />
+					</Route>
+					<Route exact path="/product">
+						<ProductList />
+					</Route>
+					<Route exact path="/product/1">
+						<ProductDetail />
+					</Route>
+					<Route exact path="/cart">
+						<Cart />
+					</Route>
+					<Route exact path="/login">
+						<Login />
+					</Route>
+					<Route exact path="/register">
+						<Register />
+					</Route>
+					<Route exact path="/about">
+						<About />
+					</Route>
+					<Route exact path="/contact">
+						<Contact />
 					</Route>
 					<Route>
 						<h1>Not found!</h1>

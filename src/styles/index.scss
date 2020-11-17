@@ -1,0 +1,27 @@
+
+// /* 
+//     General Styles
+// */
+nav div ul{
+    list-style: none;
+    margin-bottom: auto;
+}
+nav div ul li{
+    display: inline;
+}
+.ml-auto{
+    display: inline-flex;
+    align-items: center;
+}
+#loginButton{
+    margin-right: 10px;
+}
+body{
+    background-color: rgb(169, 235, 115);
+}
+.darkBG {
+    background-color: #181818;
+}
+.blackBG {
+    background-color: #000000 ;
+}

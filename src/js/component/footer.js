@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../styles/home.scss";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBBtn, MDBIcon } from "mdbreact";
 
+
 export const Footer = () => {
 	return (
 		<MDBFooter id="MDBFooter" color="blue" className="font-small pt-4 mt-4 footer fixed-bottom">

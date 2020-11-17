@@ -4,7 +4,7 @@ import "../../styles/home.scss";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-dark bg-dark mb-3">
+		<nav className="navbar navbar-dark bg-dark">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">Logo</span>
 			</Link>
