@@ -5,7 +5,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBBtn, MDBIcon } from "mdbrea
 
 export const Footer = () => {
 	return (
-		<MDBFooter id="MDBFooter" color="blue" className="font-small pt-4 mt-4 footer fixed-bottom">
+		<MDBFooter id="MDBFooter" color="blue" className="font-small pt-4 mt-4 footer">
 			<MDBContainer fluid className="text-center text-md-left">
 				<MDBRow>
 					<MDBCol md="3">
@@ -46,7 +46,7 @@ export const Footer = () => {
 						<h5>CountDown</h5>
 					</MDBCol>
 					<MDBCol md="3">
-						<Link>Contact Us</Link>
+						<Link to="/contact">Contact Us</Link>
 					</MDBCol>
 				</MDBRow>
 			</MDBContainer>

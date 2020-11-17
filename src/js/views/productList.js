@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { ProductCard } from "../component/productCard.js";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.scss";
 
 export const ProductList = () => {
 	const { store, actions } = useContext(Context);
+	let content = "";
+	content = store.products.map((product, index) => <ProductCard key={index} product={product} />);
 
 	return (
 		<div className="container">
-			<div>Product List Page</div>
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
+			<div className="row">{content}</div>
 		</div>
 	);
 };
