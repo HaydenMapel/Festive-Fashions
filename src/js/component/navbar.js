@@ -27,10 +27,14 @@ export const Navbar = () => {
 					</li>
 				</ul>
 				<div>
-					<button>Login</button>
-					<button>
-						<i className="fas fa-shopping-cart" />
-					</button>
+					<Link className="logInButton" to="/logIn">
+						<span className="navbar-brand mb-0 h1">LogIn</span>
+					</Link>
+					<Link to="">
+						<span className="navbar-brand mb-0 h1">
+							<i className="fas fa-shopping-cart" />
+						</span>
+					</Link>
 				</div>
 			</div>
 		</nav>
