@@ -12,6 +12,7 @@ export const ProductList = () => {
 
 	return (
 		<div className="container">
+			<h2 className="text-center m-2">Season Name</h2>
 			<div className="row">{content}</div>
 		</div>
 	);
