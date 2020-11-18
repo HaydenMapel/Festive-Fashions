@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Home } from "./views/home";
@@ -20,6 +20,7 @@ const Layout = () => {
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
 
+	const [hasAccount, setHasAccount] = useState(false);
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
@@ -38,7 +39,7 @@ const Layout = () => {
 						<Cart />
 					</Route>
 					<Route exact path="/login">
-						<Login />
+						<Login hasAccount={hasAccount} setHasAccount={setHasAccount} />
 					</Route>
 					<Route exact path="/register">
 						<Register />
