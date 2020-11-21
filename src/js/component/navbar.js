@@ -11,7 +11,7 @@ export const Navbar = () => {
 			<div className="ml-auto">
 				<ul className="navUl">
 					<li>
-						<Link to="/about">
+						<Link to="/">
 							<span className="navbar-brand mb-0 h1">home</span>
 						</Link>
 					</li>
@@ -21,7 +21,7 @@ export const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link to="/about">
+						<Link to="/product">
 							<span className="navbar-brand mb-0 h1">Shop</span>
 						</Link>
 					</li>
@@ -30,7 +30,7 @@ export const Navbar = () => {
 					<Link className="logInButton" to="/logIn">
 						<span className="navbar-brand mb-0 h1">LogIn</span>
 					</Link>
-					<Link to="">
+					<Link to="/cart">
 						<span className="navbar-brand mb-0 h1">
 							<i className="fas fa-shopping-cart" />
 						</span>

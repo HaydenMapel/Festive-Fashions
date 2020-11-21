@@ -61,16 +61,16 @@ export const Login = props => {
 					<p>or sign in with:</p>
 
 					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-facebook-f light-blue-text"></i>
+						<i className="fab fa-facebook-f light-blue-text" />
 					</a>
 					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-twitter light-blue-text"></i>
+						<i className="fab fa-twitter light-blue-text" />
 					</a>
 					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-linkedin-in light-blue-text"></i>
+						<i className="fab fa-linkedin-in light-blue-text" />
 					</a>
 					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-github light-blue-text"></i>
+						<i className="fab fa-github light-blue-text" />
 					</a>
 				</form>
 			) : (
@@ -142,5 +142,5 @@ export const Login = props => {
 
 Login.propTypes = {
 	hasAccount: PropTypes.bool,
-	setHasAccount: PropTypes.bool
+	setHasAccount: PropTypes.func
 };
