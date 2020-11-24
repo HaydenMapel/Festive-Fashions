@@ -11,23 +11,36 @@ export const Cart = () => {
 	// let cart = JSON.parse(localStorage.getItem("cart"));
 	console.log(cart);
 
-	function deleteCartItem(id) {
-		let newCart = cart.filter(product => product.id !== id);
+	const result = Object.values(
+		cart.reduce((r, e) => {
+			let k = `${e.size}|${e.id}`;
+			if (!r[k]) r[k] = { ...e, count: 1 };
+			else r[k].count += 1;
+			return r;
+		}, {})
+	);
+
+	console.log(result);
+
+	function deleteCartItem(index) {
+		let newCart = cart.filter((product, idx) => idx !== index);
 		localStorage.setItem("cart", JSON.stringify(newCart));
 		setCart(newCart);
 	}
 
 	function getSubtotal() {
 		let total = 0;
-		cart.map(product => {
-			let price = actions.getProduct(product.id).price;
+		result.map(product => {
+			let price = actions.getProduct(product.id).price * product.count;
 			total = total + price;
 		});
 		return total;
 	}
 
 	let content = "";
-	content = cart.map((product, index) => <CartCard key={index} product={product} deleteCartItem={deleteCartItem} />);
+	content = result.map((product, index) => (
+		<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
+	));
 
 	return (
 		<div className="container blackBG text-light">

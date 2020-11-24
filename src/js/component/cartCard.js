@@ -6,6 +6,7 @@ import { Context } from "../store/appContext";
 export const CartCard = props => {
 	const { store, actions } = useContext(Context);
 	let product = actions.getProduct(props.product.id);
+
 	return (
 		<div className="row darkBG">
 			<img src={product.picture} className="card-img img-fluid col-2" />
@@ -16,7 +17,7 @@ export const CartCard = props => {
 			<button
 				className="col-2 text-danger btn btn-outline-light font-weight-bold"
 				type="button"
-				onClick={() => props.deleteCartItem(product.id)}>
+				onClick={() => props.deleteCartItem(props.index)}>
 				Remove Item from Cart
 			</button>
 		</div>
@@ -25,5 +26,6 @@ export const CartCard = props => {
 
 CartCard.propTypes = {
 	product: PropTypes.object,
-	deleteCartItem: PropTypes.func
+	deleteCartItem: PropTypes.func,
+	index: PropTypes.number
 };
