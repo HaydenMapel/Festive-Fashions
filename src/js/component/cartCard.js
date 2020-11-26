@@ -11,9 +11,9 @@ export const CartCard = props => {
 		<div className="row darkBG">
 			<img src={product.picture} className="card-img img-fluid col-2" />
 			<div className="col-2">{product.name}</div>
-			<div className="col-2">Size {props.product.size}</div>
-			<div className="col-2">Quantity ?</div>
-			<div className="col-2">${product.price}</div>
+			<div className="col-2">Size: {props.product.size}</div>
+			<div className="col-2">Quantity: {props.product.count}</div>
+			<div className="col-2">${(product.price * props.product.count).toFixed(2)}</div>
 			<button
 				className="col-2 text-danger btn btn-outline-light font-weight-bold"
 				type="button"

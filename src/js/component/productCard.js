@@ -10,7 +10,7 @@ export const ProductCard = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	const [size, setSize] = useState("");
-
+	const [count, setCount] = useState("1");
 	// function to add selected product and size to local storage
 	function addToCart(e) {
 		e.preventDefault();
@@ -23,14 +23,23 @@ export const ProductCard = props => {
 			let cartItem = {};
 			cartItem.size = size;
 			cartItem.id = props.product.id;
-			alert(props.product.name + " size " + size + " added to cart");
+			cartItem.count = parseInt(count);
+			alert(count + " " + props.product.name + " size " + size + " added to cart");
 
 			// send cart object to local storage
 			let cart = [];
 			if (localStorage.getItem("cart")) {
 				cart = JSON.parse(localStorage.getItem("cart"));
 			}
-			cart.push(cartItem);
+
+			// check if product already exists in cart and add to existing item if so
+			if (cart.some(product => cartItem.id == product.id && cartItem.size == product.size)) {
+				cart.forEach(function(product) {
+					if (cartItem.id == product.id && cartItem.size == product.size)
+						product.count = product.count + cartItem.count;
+				});
+			} else cart.push(cartItem);
+
 			localStorage.setItem("cart", JSON.stringify(cart));
 
 			console.log(cartItem);
@@ -77,6 +86,20 @@ export const ProductCard = props => {
 										XL
 									</ToggleButton>
 								</ToggleButtonGroup>
+								<Form.Group controlId="exampleForm.ControlSelect1">
+									{/* <Form.Label>Quantity</Form.Label> */}
+									<Form.Control
+										size="sm"
+										as="select"
+										defaultValue="1"
+										onChange={e => setCount(e.target.value)}>
+										<option value={1}>1</option>
+										<option value={2}>2</option>
+										<option value={3}>3</option>
+										<option value={4}>4</option>
+										<option value={5}>5</option>
+									</Form.Control>
+								</Form.Group>
 							</div>
 							<div className="col-6">
 								<button className="btn btn-danger" type="submit">
