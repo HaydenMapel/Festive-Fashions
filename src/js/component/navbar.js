@@ -52,16 +52,27 @@ export const Navbar = props => {
 						</Link>
 					</li>
 					<li>
+<<<<<<< HEAD
 						<Link to="/productList">
+=======
+						<Link to="/product">
+>>>>>>> 57d7b9ff9b97cf63ff8c693d68dee44835164103
 							<span className="navbar-brand mb-0 h1">Shop</span>
 						</Link>
 					</li>
 					<li>{userPage}</li>
 				</ul>
 				<div>
+<<<<<<< HEAD
 					<span className="navbar-brand mb-0 h1">{action}</span>
 
 					<Link to="">
+=======
+					<Link className="logInButton" to="/logIn">
+						<span className="navbar-brand mb-0 h1">LogIn</span>
+					</Link>
+					<Link to="/cart">
+>>>>>>> 57d7b9ff9b97cf63ff8c693d68dee44835164103
 						<span className="navbar-brand mb-0 h1">
 							<i className="fas fa-shopping-cart" />
 						</span>
