@@ -10,32 +10,6 @@ export const Cart = () => {
 	const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
 
 	console.log(cart);
-	// useEffect(() => {
-	// 	function cartReducer(array) {
-	// 		let reducedCart = Object.values(
-	// 			array.reduce((total, curr) => {
-	// 				let k = `${curr.size}|${curr.id}`;
-	// 				// if (!total[k]) total[k] = { ...curr, count: 1 };
-	// 				// else total[k].count += 1;
-	// 				total[k].count += 1;
-	// 				return total;
-	// 			}, {})
-	// 		);
-	// 		return reducedCart;
-	// 	}
-	// 	setCart(cartReducer(cart));
-	// 	console.log(cart);
-	// }, []);
-	// const reducedCart = Object.values(
-	// 	cart.reduce((r, e) => {
-	// 		let k = `${e.size}|${e.id}`;
-	// 		if (!r[k]) r[k] = { ...e, count: 1 };
-	// 		else r[k].count += 1;
-	// 		return r;
-	// 	}, {})
-	// );
-
-	// console.log(reducedCart);
 
 	function deleteCartItem(index) {
 		let newCart = cart.filter((product, idx) => idx !== index);
@@ -47,6 +21,14 @@ export const Cart = () => {
 		let total = 0;
 		cart.map(product => {
 			let price = actions.getProduct(product.id).price * product.count;
+			total = total + price;
+		});
+		return total;
+	}
+	function getShipping() {
+		let total = 0;
+		cart.map(product => {
+			let price = product.count * 5;
 			total = total + price;
 		});
 		return total;
@@ -66,8 +48,8 @@ export const Cart = () => {
 					<div className="darkBG m-3">Login or Username</div>
 					<div className="darkBG">
 						<div>Subtotal ${getSubtotal().toFixed(2)}</div>
-						<div>Shipping ${(cart.length * 5).toFixed(2)}</div>
-						<div>Total ${(getSubtotal() + cart.length * 5).toFixed(2)}</div>
+						<div>Shipping ${getShipping().toFixed(2)}</div>
+						<div>Total ${(getSubtotal() + getShipping()).toFixed(2)}</div>
 					</div>
 					<button className="btn btn-danger rounded-pill btn-block mx-auto">Checkout with Paypal</button>
 				</div>
