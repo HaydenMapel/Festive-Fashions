@@ -239,12 +239,8 @@ export const Login = props => {
 
 Login.propTypes = {
 	hasAccount: PropTypes.bool,
-<<<<<<< HEAD
 	setHasAccount: PropTypes.func,
 	ID: PropTypes.number,
 	setID: PropTypes.func,
 	setLoggedIn: PropTypes.func
-=======
-	setHasAccount: PropTypes.func
->>>>>>> 57d7b9ff9b97cf63ff8c693d68dee44835164103
 };
