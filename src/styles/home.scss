@@ -16,7 +16,7 @@ nav div ul li{
     margin-right: 10px;
 }
 body{
-    //background-color: rgb(169, 235, 115);
+    background-color: rgb(91, 103, 104);
 }
 
 .footer{
@@ -62,8 +62,14 @@ span{
 .logInForm{
     width: auto;
     margin: auto;
-    margin-bottom: 240px;
+    //margin-bottom: 240px;
     
+}
+
+.logInForm form {
+    width: 350px;
+    height: 500px;
+    background-color: white;
 }
 
 

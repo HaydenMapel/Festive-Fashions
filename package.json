@@ -78,7 +78,9 @@
 	},
 	"dependencies": {
 		"bootstrap": "^4.5.3",
+		"crypto-js": "^4.0.0",
 		"emailjs-com": "^2.6.4",
+		"md5": "^2.3.0",
 		"mdbootstrap": "^4.19.1",
 		"mdbreact": "^4.27.0",
 		"prop-types": "^15.7.2",
