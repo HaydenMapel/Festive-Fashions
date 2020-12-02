@@ -13,10 +13,21 @@ export const UserPage = props => {
 	console.log(ID);
 
 	console.log(userName);
+	let name = sessionStorage.getItem("name");
+	let isLoggedInWithGoogle = sessionStorage.getItem("loggedInWithGoogle");
+	//let isLoggedIn = sessionStorage.getItem("loggedIn");
+
+	// const result = (
+
+	// );
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Hellow {userName.name}, This is your account info!</h1>
+			{isLoggedInWithGoogle ? (
+				<h1>Hellow {name}, This is your account logged in with google info!</h1>
+			) : (
+				<h1>Hellow {userName.name}, This is your account info!</h1>
+			)}
 		</div>
 	);
 };

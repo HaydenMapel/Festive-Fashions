@@ -9,7 +9,28 @@ export const Navbar = props => {
 	let action = "";
 	let userPage = "";
 	let md5 = sessionStorage.getItem("md5");
-	if (props.loggedIn !== "true") {
+
+	//check if user logged in with google
+	if (props.loggedInWithGoogle == "true") {
+		//display a google log out button, clear the session storage and redirect the user to the home page
+		action = (
+			<button
+				onClick={() => {
+					sessionStorage.clear();
+					let isLoggedIn = sessionStorage.getItem("loggedInWithGoogle");
+					props.setLoggedInWithGoogle(isLoggedIn);
+					history.push("/");
+				}}>
+				Google_LogOut
+			</button>
+		);
+		userPage = (
+			<Link to={`/userPage/${md5}`}>
+				<span className="navbar-brand mb-0 h1">Account</span>
+			</Link>
+		);
+		//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
+	} else if (props.loggedIn !== "true") {
 		action = (
 			<Link className="logInButton" to="/logIn">
 				<span className="navbar-brand mb-0 h1">LogIn</span>
@@ -52,32 +73,25 @@ export const Navbar = props => {
 						</Link>
 					</li>
 					<li>
-<<<<<<< HEAD
 						<Link to="/productList">
-=======
+							<span className="navbar-brand mb-0 h1">productList</span>
+						</Link>
+					</li>
+					<li>
 						<Link to="/product">
->>>>>>> 57d7b9ff9b97cf63ff8c693d68dee44835164103
 							<span className="navbar-brand mb-0 h1">Shop</span>
 						</Link>
 					</li>
 					<li>{userPage}</li>
 				</ul>
-				<div>
-<<<<<<< HEAD
-					<span className="navbar-brand mb-0 h1">{action}</span>
-
-					<Link to="">
-=======
-					<Link className="logInButton" to="/logIn">
-						<span className="navbar-brand mb-0 h1">LogIn</span>
-					</Link>
-					<Link to="/cart">
->>>>>>> 57d7b9ff9b97cf63ff8c693d68dee44835164103
-						<span className="navbar-brand mb-0 h1">
-							<i className="fas fa-shopping-cart" />
-						</span>
-					</Link>
-				</div>
+			</div>
+			<div>
+				<span className="navbar-brand mb-0 h1">{action}</span>
+				<Link to="/cart">
+					<span className="navbar-brand mb-0 h1">
+						<i className="fas fa-shopping-cart" />
+					</span>
+				</Link>
 			</div>
 		</nav>
 	);
@@ -85,5 +99,7 @@ export const Navbar = props => {
 
 Navbar.propTypes = {
 	loggedIn: PropTypes.string,
-	setLoggedIn: PropTypes.func
+	setLoggedIn: PropTypes.func,
+	loggedInWithGoogle: PropTypes.string,
+	setLoggedInWithGoogle: PropTypes.func
 };

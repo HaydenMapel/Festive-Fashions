@@ -20,8 +20,12 @@ const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
+
 	let isLoggedIn = sessionStorage.getItem("loggedIn");
 	const [loggedIn, setLoggedIn] = useState(isLoggedIn);
+
+	let isLoggedInWithGoogle = sessionStorage.getItem("loggedInWithGoogle");
+	const [loggedInWithGoogle, setLoggedInWithGoogle] = useState(isLoggedInWithGoogle);
 	console.log("this is loggedIn variable in layout with the value of sessionStorage before sing in");
 	console.log(loggedIn);
 	const [hasAccount, setHasAccount] = useState(false);
@@ -29,7 +33,12 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
-				<Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+				<Navbar
+					loggedIn={loggedIn}
+					setLoggedIn={setLoggedIn}
+					loggedInWithGoogle={loggedInWithGoogle}
+					setLoggedInWithGoogle={setLoggedInWithGoogle}
+				/>
 				<Switch>
 					<Route exact path="/">
 						<Home />
@@ -50,6 +59,7 @@ const Layout = () => {
 							ID={ID}
 							setID={setID}
 							setLoggedIn={setLoggedIn}
+							setLoggedInWithGoogle={setLoggedInWithGoogle}
 						/>
 					</Route>
 					<Route exact path="/register">
