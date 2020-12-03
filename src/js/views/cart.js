@@ -10,6 +10,7 @@ export const Cart = () => {
 	const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
 
 	console.log(cart);
+	console.log(store);
 
 	function deleteCartItem(index) {
 		let newCart = cart.filter((product, idx) => idx !== index);
@@ -20,7 +21,7 @@ export const Cart = () => {
 	function getSubtotal() {
 		let total = 0;
 		cart.map(product => {
-			let price = actions.getProduct(product.id).price * product.count;
+			let price = parseFloat(actions.getProduct(product.ID).price) * product.count;
 			total = total + price;
 		});
 		return total;

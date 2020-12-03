@@ -45,13 +45,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getProducts: () => {
 				return getStore().products;
 			},
-			getProduct: id => {
+			getProduct: ID => {
 				const products = getStore().products;
-				id = parseInt(id);
+				ID = parseInt(ID);
 				let product = {};
 
 				products.forEach(element => {
-					if (id === element.id) {
+					if (ID === element.ID) {
 						product = element;
 					}
 				});
@@ -60,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			//This function loads the data from the WordPress API
-			loadSomeData: () => {
+			loadLoginData: () => {
 				let url =
 					"https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io/wp-json/sample_api/v1/userLogIn";
 				fetch(url)
@@ -70,11 +70,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					})
 					.then(jsonResponse => {
-						console.log(jsonResponse);
+						// console.log(jsonResponse);
 						let store = getStore();
 						store.users = jsonResponse.users;
 						setStore(store);
-						console.log(store);
+						// console.log(store);
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
+			loadProductData: () => {
+				let url =
+					"https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io//wp-json/sample_api/v1/product";
+				fetch(url)
+					.then(response => {
+						if (response.status === 200) {
+							return response.json();
+						}
+					})
+					.then(jsonResponse => {
+						// console.log(jsonResponse);
+						let store = getStore();
+						store.products = jsonResponse.products;
+						setStore(store);
+						// console.log(store);
 					})
 					.catch(error => {
 						console.log(error);

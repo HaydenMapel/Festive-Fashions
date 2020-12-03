@@ -61,7 +61,7 @@ export const Navbar = props => {
 				<div>
 					<span className="navbar-brand mb-0 h1">{action}</span>
 
-					<Link to="">
+					<Link to="/cart">
 						<span className="navbar-brand mb-0 h1">
 							<i className="fas fa-shopping-cart" />
 						</span>
