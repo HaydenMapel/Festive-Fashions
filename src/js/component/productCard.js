@@ -49,9 +49,16 @@ export const ProductCard = props => {
 	return (
 		<div className="card col-6 my-3 border-0">
 			<div className="card-body text-center font-weight-bold">
-				<h5 className="card-title">{props.product.name}</h5>
-				<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
-				<div>
+				<Link
+					className=" card-title h5"
+					to={{
+						pathname: "/product/" + props.product.ID
+					}}>
+					<h5 className="card-title">{props.product.name}</h5>
+					<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
+				</Link>
+				<div>${props.product.price}</div>
+				{/* <div>
 					<Form noValidate onSubmit={addToCart}>
 						<Form.Row className="my-3">
 							<div className="col-6">
@@ -108,8 +115,14 @@ export const ProductCard = props => {
 							</div>
 						</Form.Row>
 					</Form>
-				</div>
+				</div> */}
 				<p className="card-text text-left font-weight-normal">{props.product.short_description}</p>
+				<Link
+					to={{
+						pathname: "/product/" + props.product.ID
+					}}>
+					<button className="btn btn-danger">Learn more about this product</button>
+				</Link>
 			</div>
 		</div>
 	);

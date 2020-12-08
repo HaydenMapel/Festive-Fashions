@@ -2,12 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartCard } from "../component/cartCard.js";
 import { Context } from "../store/appContext";
+import { PayPalButtons } from "../component/paypalButtons.js";
 
 import "../../styles/demo.scss";
 
 export const Cart = () => {
 	const { store, actions } = useContext(Context);
 	const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
+	const [paid, setPaid] = useState(false);
 
 	console.log(cart);
 	console.log(store);
@@ -40,6 +42,17 @@ export const Cart = () => {
 		<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
 	));
 
+	let totalPrice = (getSubtotal() + getShipping()).toFixed(2);
+	console.log(totalPrice);
+
+	let checkoutButton = (
+		<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+	);
+
+	if (sessionStorage.getItem("loggedIn")) {
+		checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
+	}
+
 	return (
 		<div className="container blackBG text-light">
 			<h2 className="text-center text-danger">Cart</h2>
@@ -50,9 +63,11 @@ export const Cart = () => {
 					<div className="darkBG">
 						<div>Subtotal ${getSubtotal().toFixed(2)}</div>
 						<div>Shipping ${getShipping().toFixed(2)}</div>
-						<div>Total ${(getSubtotal() + getShipping()).toFixed(2)}</div>
+						<div>Total ${totalPrice}</div>
 					</div>
-					<button className="btn btn-danger rounded-pill btn-block mx-auto">Checkout with Paypal</button>
+					<div>{checkoutButton}</div>
+					{/* <button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+					<PayPalButtons totalPrice={totalPrice} /> */}
 				</div>
 			</div>
 			<Link to="/">

@@ -3,10 +3,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Home } from "./views/home";
 import { ProductList } from "./views/productList";
+import { Christmas } from "./views/christmas";
+import { NewYears } from "./views/newYears";
+import { Valentines } from "./views/valentines";
 import { ProductDetail } from "./views/productDetail";
 import { Cart } from "./views/cart";
 import { Login } from "./views/login";
-import { Register } from "./views/register";
 import { About } from "./views/about";
 import { Contact } from "./views/contact";
 import { UserPage } from "./views/userPage";
@@ -37,7 +39,16 @@ const Layout = () => {
 					<Route exact path="/product">
 						<ProductList />
 					</Route>
-					<Route exact path="/product/1">
+					<Route exact path="/product/christmas">
+						<Christmas />
+					</Route>
+					<Route exact path="/product/newyears">
+						<NewYears />
+					</Route>
+					<Route exact path="/product/valentines">
+						<Valentines />
+					</Route>
+					<Route exact path="/product/:ID">
 						<ProductDetail />
 					</Route>
 					<Route exact path="/cart">
@@ -51,9 +62,6 @@ const Layout = () => {
 							setID={setID}
 							setLoggedIn={setLoggedIn}
 						/>
-					</Route>
-					<Route exact path="/register">
-						<Register />
 					</Route>
 					<Route exact path="/about">
 						<About />

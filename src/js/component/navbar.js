@@ -43,7 +43,7 @@ export const Navbar = props => {
 				<ul className="navUl">
 					<li>
 						<Link to="/">
-							<span className="navbar-brand mb-0 h1">home</span>
+							<span className="navbar-brand mb-0 h1">Home</span>
 						</Link>
 					</li>
 					<li>

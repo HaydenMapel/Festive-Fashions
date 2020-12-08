@@ -11,7 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					picture: "https://via.placeholder.com/150",
 					short_description: "short1",
 					long_description: "long1",
-					id: 1
+					ID: 1,
+					season: "christmas"
 				},
 				{
 					name: "Second",
@@ -19,7 +20,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					picture: "https://via.placeholder.com/150",
 					short_description: "short2",
 					long_description: "long2",
-					id: 2
+					ID: 2,
+					season: "christmas"
 				},
 				{
 					name: "Third",
@@ -27,7 +29,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					picture: "https://via.placeholder.com/150",
 					short_description: "short3",
 					long_description: "long3",
-					id: 3
+					ID: 3,
+					season: "christmas"
 				},
 				{
 					name: "Fourth",
@@ -35,7 +38,80 @@ const getState = ({ getStore, getActions, setStore }) => {
 					picture: "https://via.placeholder.com/150",
 					short_description: "short4",
 					long_description: "long4",
-					id: 4
+					ID: 4,
+					season: "christmas"
+				},
+				{
+					name: "Fifth",
+					price: 14.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short5",
+					long_description: "long5",
+					ID: 5,
+					season: "newyears"
+				},
+				{
+					name: "Sixth",
+					price: 15.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short6",
+					long_description: "long6",
+					ID: 6,
+					season: "newyears"
+				},
+				{
+					name: "Seventh",
+					price: 16.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short7",
+					long_description: "long7",
+					ID: 7,
+					season: "newyears"
+				},
+				{
+					name: "Eigth",
+					price: 17.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short8",
+					long_description: "long8",
+					ID: 8,
+					season: "newyears"
+				},
+				{
+					name: "Ninth",
+					price: 18.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short9",
+					long_description: "long9",
+					ID: 9,
+					season: "valentines"
+				},
+				{
+					name: "Tenth",
+					price: 19.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short10",
+					long_description: "long10",
+					ID: 10,
+					season: "valentines"
+				},
+				{
+					name: "Eleventh",
+					price: 20.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short11",
+					long_description: "long11",
+					ID: 11,
+					season: "valentines"
+				},
+				{
+					name: "Twelfth",
+					price: 21.99,
+					picture: "https://via.placeholder.com/150",
+					short_description: "short12",
+					long_description: "long12",
+					ID: 12,
+					season: "valentines"
 				}
 			],
 			users: []
