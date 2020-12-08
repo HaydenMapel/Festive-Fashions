@@ -14,6 +14,8 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+//import "../../styles/home.scss";
+import "../styles/home.scss";
 
 //create your first component
 const Layout = () => {
@@ -33,52 +35,58 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
-				<Navbar
-					loggedIn={loggedIn}
-					setLoggedIn={setLoggedIn}
-					loggedInWithGoogle={loggedInWithGoogle}
-					setLoggedInWithGoogle={setLoggedInWithGoogle}
-				/>
-				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<Route exact path="/product">
-						<ProductList />
-					</Route>
-					<Route exact path="/product/1">
-						<ProductDetail />
-					</Route>
-					<Route exact path="/cart">
-						<Cart />
-					</Route>
-					<Route exact path="/login">
-						<Login
-							hasAccount={hasAccount}
-							setHasAccount={setHasAccount}
-							ID={ID}
-							setID={setID}
-							setLoggedIn={setLoggedIn}
-							setLoggedInWithGoogle={setLoggedInWithGoogle}
-						/>
-					</Route>
-					<Route exact path="/register">
-						<Register />
-					</Route>
-					<Route exact path="/about">
-						<About />
-					</Route>
-					<Route exact path="/contact">
-						<Contact />
-					</Route>
-					<Route exact path="/userPage/:ID">
-						<UserPage ID={ID} />
-					</Route>
-					<Route>
-						<h1>Not found!</h1>
-					</Route>
-				</Switch>
-				<Footer />
+				<div>
+					<Navbar
+						loggedIn={loggedIn}
+						setLoggedIn={setLoggedIn}
+						loggedInWithGoogle={loggedInWithGoogle}
+						setLoggedInWithGoogle={setLoggedInWithGoogle}
+					/>
+				</div>
+				<div className="bodyInLayout">
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route exact path="/product">
+							<ProductList />
+						</Route>
+						<Route exact path="/product/1">
+							<ProductDetail />
+						</Route>
+						<Route exact path="/cart">
+							<Cart />
+						</Route>
+						<Route exact path="/login">
+							<Login
+								hasAccount={hasAccount}
+								setHasAccount={setHasAccount}
+								ID={ID}
+								setID={setID}
+								setLoggedIn={setLoggedIn}
+								setLoggedInWithGoogle={setLoggedInWithGoogle}
+							/>
+						</Route>
+						<Route exact path="/register">
+							<Register />
+						</Route>
+						<Route exact path="/about">
+							<About />
+						</Route>
+						<Route exact path="/contact">
+							<Contact />
+						</Route>
+						<Route exact path="/userPage/:ID">
+							<UserPage ID={ID} />
+						</Route>
+						<Route>
+							<h1>Not found!</h1>
+						</Route>
+					</Switch>
+				</div>
+				<div>
+					<Footer />
+				</div>
 			</BrowserRouter>
 		</div>
 	);

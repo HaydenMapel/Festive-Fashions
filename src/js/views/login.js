@@ -1,18 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+//import { Link, useParams } from "react-router-dom";
+//import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
-import { UserPage } from "./userPage";
+import { GoogleSignInButton } from "../component/googleSigInButton.js";
+//import { UserPage } from "./userPage";
 import MD5 from "crypto-js/md5";
-import GoogleLogin from "react-google-login";
+//import GoogleLogin from "react-google-login";
 import "../../styles/home.scss";
 
 export const Login = props => {
 	let hasAccount = props.hasAccount;
-	const clientID = "186674746870-2ihe83atnv1b8najstagj2u34rqbt5gn.apps.googleusercontent.com";
+	//const clientID = "186674746870-2ihe83atnv1b8najstagj2u34rqbt5gn.apps.googleusercontent.com";
 	const history = useHistory();
-	const { store, actions } = useContext(Context);
+	//const { store, actions } = useContext(Context);
 
 	//variables to hold user inputs
 	const [name, setName] = useState("");
@@ -21,27 +22,28 @@ export const Login = props => {
 	const [password, setPassword] = useState("");
 
 	//variables to hold the user info when loging in with google
-	const [googleUserName, setGoogleUserName] = useState("");
-	const [googleUserEmail, setGoogleUserEmail] = useState("");
+	// const [googleUserName, setGoogleUserName] = useState("");
+	// const [googleUserEmail, setGoogleUserEmail] = useState("");
 
-	//Google response functions
-	let onSuccess = response => {
-		console.log("[Login successful] response: ", response);
-		//setGoogleUserName(response.profileObj.givenName);
-		//setGoogleUserEmail(response.profileObj.email);
+	// //Google response functions
+	// let onSuccess = response => {
+	// 	console.log("[Login successful] response: ", response);
+	// 	//setGoogleUserName(response.profileObj.givenName);
+	// 	//setGoogleUserEmail(response.profileObj.email);
 
-		//if the response is successful then set the logged in in the session storage
-		sessionStorage.setItem("loggedInWithGoogle", true);
-		sessionStorage.setItem("name", response.profileObj.givenName);
-		sessionStorage.setItem("md5", response.profileObj.googleId);
-		props.setLoggedInWithGoogle("true");
-		history.push("/");
-		console.log(sessionStorage);
-	};
+	// 	//if the response is successful then set the logged in in the session storage
+	// 	sessionStorage.setItem("loggedInWithGoogle", true);
+	// 	sessionStorage.setItem("name", response.profileObj.givenName);
+	// 	let md5 = MD5(response.profileObj.googleId).toString();
+	// 	sessionStorage.setItem("md5", md5);
+	// 	props.setLoggedInWithGoogle("true");
+	// 	history.push("/");
+	// 	console.log(sessionStorage);
+	// };
 
-	let onFailure = response => {
-		console.log("[Login failed] response: ", response);
-	};
+	// let onFailure = response => {
+	// 	console.log("[Login failed] response: ", response);
+	// };
 
 	// let responseGoogle = response => {
 	// 	console.log(response);
@@ -162,16 +164,16 @@ export const Login = props => {
 						</p>
 
 						<p>or sign in with:</p>
-
+						<GoogleSignInButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />
 						{/* add google button */}
-						<div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-						<GoogleLogin
+						{/* <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> */}
+						{/* <GoogleLogin
 							clientId={clientID}
 							buttonText="Sign In"
 							onSuccess={onSuccess}
 							onFailure={onFailure}
 							cookiePolicy={"single_host_origin"}
-						/>
+						/> */}
 						<a href="#" className="mx-2" role="button">
 							<i className="fab fa-facebook-f light-blue-text" />
 						</a>
