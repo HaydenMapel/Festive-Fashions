@@ -16,14 +16,20 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+//import "../../styles/home.scss";
+import "../styles/home.scss";
 
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
+
 	let isLoggedIn = sessionStorage.getItem("loggedIn");
 	const [loggedIn, setLoggedIn] = useState(isLoggedIn);
+
+	let isLoggedInWithGoogle = sessionStorage.getItem("loggedInWithGoogle");
+	const [loggedInWithGoogle, setLoggedInWithGoogle] = useState(isLoggedInWithGoogle);
 	console.log("this is loggedIn variable in layout with the value of sessionStorage before sing in");
 	console.log(loggedIn);
 	const [hasAccount, setHasAccount] = useState(false);
@@ -31,52 +37,67 @@ const Layout = () => {
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
-				<Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<Route exact path="/product">
-						<ProductList />
-					</Route>
-					<Route exact path="/product/christmas">
-						<Christmas />
-					</Route>
-					<Route exact path="/product/newyears">
-						<NewYears />
-					</Route>
-					<Route exact path="/product/valentines">
-						<Valentines />
-					</Route>
-					<Route exact path="/product/:ID">
-						<ProductDetail />
-					</Route>
-					<Route exact path="/cart">
-						<Cart />
-					</Route>
-					<Route exact path="/login">
-						<Login
-							hasAccount={hasAccount}
-							setHasAccount={setHasAccount}
-							ID={ID}
-							setID={setID}
-							setLoggedIn={setLoggedIn}
-						/>
-					</Route>
-					<Route exact path="/about">
-						<About />
-					</Route>
-					<Route exact path="/contact">
-						<Contact />
-					</Route>
-					<Route exact path="/userPage/:ID">
-						<UserPage ID={ID} />
-					</Route>
-					<Route>
-						<h1>Not found!</h1>
-					</Route>
-				</Switch>
-				<Footer />
+				<div>
+					<Navbar
+						loggedIn={loggedIn}
+						setLoggedIn={setLoggedIn}
+						loggedInWithGoogle={loggedInWithGoogle}
+						setLoggedInWithGoogle={setLoggedInWithGoogle}
+					/>
+				</div>
+				<div className="bodyInLayout">
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route exact path="/product">
+							<ProductList />
+						</Route>
+            <Route exact path="/product/christmas">
+						  <Christmas />
+					  </Route>
+					  <Route exact path="/product/newyears">
+						  <NewYears />
+					  </Route>
+					  <Route exact path="/product/valentines">
+						  <Valentines />
+					  </Route>
+					  <Route exact path="/product/:ID">
+						  <ProductDetail />
+				  	</Route>
+						<Route exact path="/cart">
+							<Cart />
+						</Route>
+						<Route exact path="/login">
+							<Login
+								hasAccount={hasAccount}
+								setHasAccount={setHasAccount}
+								ID={ID}
+								setID={setID}
+								setLoggedIn={setLoggedIn}
+								setLoggedInWithGoogle={setLoggedInWithGoogle}
+							/>
+						</Route>
+						<Route exact path="/register">
+							<Register />
+						</Route>
+						<Route exact path="/about">
+							<About />
+						</Route>
+						<Route exact path="/contact">
+							<Contact />
+						</Route>
+						<Route exact path="/userPage/:ID">
+							<UserPage ID={ID} />
+						</Route>
+						<Route>
+							<h1>Not found!</h1>
+						</Route>
+					</Switch>
+				</div>
+				<div>
+					<Footer />
+				</div>
 			</BrowserRouter>
 		</div>
 	);

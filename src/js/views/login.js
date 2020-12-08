@@ -1,35 +1,58 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
-import { Context } from "../store/appContext";
+//import { Link, useParams } from "react-router-dom";
+//import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
-import { UserPage } from "./userPage";
+import { GoogleSignInButton } from "../component/googleSigInButton.js";
+//import { UserPage } from "./userPage";
 import MD5 from "crypto-js/md5";
-//  import {
-// 	MDBContainer,
-// 	MDBRow,
-// 	MDBCol,
-// 	MDBCard,
-// 	MDBCardBody,
-// 	MDBInput,
-// 	MDBBtn,
-// 	MDBIcon,
-// 	MDBModalFooter,
-// 	MDBCardHeader
-// } from "mdbreact";
+//import GoogleLogin from "react-google-login";
 import "../../styles/home.scss";
 
 export const Login = props => {
 	let hasAccount = props.hasAccount;
+	//const clientID = "186674746870-2ihe83atnv1b8najstagj2u34rqbt5gn.apps.googleusercontent.com";
 	const history = useHistory();
-	const { store, actions } = useContext(Context);
+	//const { store, actions } = useContext(Context);
 
 	//variables to hold user inputs
 	const [name, setName] = useState("");
 	const [last_name, setLast_name] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	//const [ID, setID] = useState(null);
+
+	//variables to hold the user info when loging in with google
+	// const [googleUserName, setGoogleUserName] = useState("");
+	// const [googleUserEmail, setGoogleUserEmail] = useState("");
+
+	// //Google response functions
+	// let onSuccess = response => {
+	// 	console.log("[Login successful] response: ", response);
+	// 	//setGoogleUserName(response.profileObj.givenName);
+	// 	//setGoogleUserEmail(response.profileObj.email);
+
+	// 	//if the response is successful then set the logged in in the session storage
+	// 	sessionStorage.setItem("loggedInWithGoogle", true);
+	// 	sessionStorage.setItem("name", response.profileObj.givenName);
+	// 	let md5 = MD5(response.profileObj.googleId).toString();
+	// 	sessionStorage.setItem("md5", md5);
+	// 	props.setLoggedInWithGoogle("true");
+	// 	history.push("/");
+	// 	console.log(sessionStorage);
+	// };
+
+	// let onFailure = response => {
+	// 	console.log("[Login failed] response: ", response);
+	// };
+
+	// let responseGoogle = response => {
+	// 	console.log(response);
+	//     setGoogleUserName(response.profileObj.givenName);
+	//     setGoogleUserEmail(response.profileObj.email)
+
+	//     //if the response is successful then set the logged in in the session storage
+	//     sessionStorage.setItem("loggedIn", true);
+	// };
 
 	//function to submit the sign Up form
 	let handleSubmitSignUp = e => {
@@ -92,28 +115,29 @@ export const Login = props => {
 	return (
 		<div className="container logInForm">
 			{hasAccount ? (
-				<form className="text-center border border-dark p-5" action="#!" onSubmit={handleSubmitSignIn}>
-					<p className="h4 mb-4 titleForm">Sign in</p>
+				<div>
+					<form className="text-center border border-dark p-5" action="#!" onSubmit={handleSubmitSignIn}>
+						<p className="h4 mb-4 titleForm">Sign in</p>
 
-					<input
-						type="email"
-						id="defaultLoginFormEmail"
-						className="form-control mb-4"
-						placeholder="E-mail"
-						value={email}
-						onChange={e => setEmail(e.target.value)}
-					/>
+						<input
+							type="email"
+							id="defaultLoginFormEmail"
+							className="form-control mb-4"
+							placeholder="E-mail"
+							value={email}
+							onChange={e => setEmail(e.target.value)}
+						/>
 
-					<input
-						type="password"
-						id="defaultLoginFormPassword"
-						className="form-control mb-4"
-						placeholder="Password"
-						value={password}
-						onChange={e => setPassword(e.target.value)}
-					/>
+						<input
+							type="password"
+							id="defaultLoginFormPassword"
+							className="form-control mb-4"
+							placeholder="Password"
+							value={password}
+							onChange={e => setPassword(e.target.value)}
+						/>
 
-					{/* <div className="d-flex justify-content-around">
+						{/* <div className="d-flex justify-content-around">
 						<div>
 							<div className="custom-control custom-checkbox">
 								<input type="checkbox" className="custom-control-input" id="defaultLoginFormRemember" />
@@ -127,70 +151,83 @@ export const Login = props => {
 						</div>
 					</div> */}
 
-					<button className="btn btn-info btn-block my-4" type="submit">
-						Sign in
-					</button>
+						<button className="btn btn-info btn-block my-4" type="submit">
+							Sign in
+						</button>
 
-					<p>
-						Do not have an account?
-						{/* <a href="">Sign Up</a> */}
-						<span onClick={() => props.setHasAccount(!hasAccount)}> Sign Up</span>
-					</p>
+						<p>
+							Do not have an account?
+							{/* <a href="#signUp">
+							Sign Up
+						</a> */}
+							<span onClick={() => props.setHasAccount(!hasAccount)}> Sign Up</span>
+						</p>
 
-					<p>or sign in with:</p>
-
-					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-facebook-f light-blue-text" />
-					</a>
-					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-twitter light-blue-text" />
-					</a>
-					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-linkedin-in light-blue-text" />
-					</a>
-					<a href="#" className="mx-2" role="button">
-						<i className="fab fa-github light-blue-text" />
-					</a>
-				</form>
+						<p>or sign in with:</p>
+						<GoogleSignInButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />
+						{/* add google button */}
+						{/* <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> */}
+						{/* <GoogleLogin
+							clientId={clientID}
+							buttonText="Sign In"
+							onSuccess={onSuccess}
+							onFailure={onFailure}
+							cookiePolicy={"single_host_origin"}
+						/> */}
+						<a href="#" className="mx-2" role="button">
+							<i className="fab fa-facebook-f light-blue-text" />
+						</a>
+						<a href="#" className="mx-2" role="button">
+							<i className="fab fa-twitter light-blue-text" />
+						</a>
+						<a href="#" className="mx-2" role="button">
+							<i className="fab fa-linkedin-in light-blue-text" />
+						</a>
+						<a href="#" className="mx-2" role="button">
+							<i className="fab fa-github light-blue-text" />
+						</a>
+					</form>
+				</div>
 			) : (
-				<form className="text-center border border-dark p-5" action="#!" onSubmit={handleSubmitSignUp}>
-					<p className="h4 mb-4 titleForm">Sign Up</p>
+				<div>
+					<form className="text-center border border-dark p-5" action="#!" onSubmit={handleSubmitSignUp}>
+						<p className="h4 mb-4 titleForm">Sign Up</p>
 
-					<input
-						type="text"
-						id="defaultLoginFormName"
-						className="form-control mb-4"
-						placeholder="Name"
-						value={name}
-						onChange={e => setName(e.target.value)}
-					/>
-					<input
-						type="text"
-						id="defaultLoginFormLastName"
-						className="form-control mb-4"
-						placeholder="Last Name"
-						value={last_name}
-						onChange={e => setLast_name(e.target.value)}
-					/>
-					<input
-						type="email"
-						id="defaultLoginFormEmail"
-						className="form-control mb-4"
-						placeholder="E-mail"
-						value={email}
-						onChange={e => setEmail(e.target.value)}
-					/>
+						<input
+							type="text"
+							id="defaultLoginFormName"
+							className="form-control mb-4"
+							placeholder="Name"
+							value={name}
+							onChange={e => setName(e.target.value)}
+						/>
+						<input
+							type="text"
+							id="defaultLoginFormLastName"
+							className="form-control mb-4"
+							placeholder="Last Name"
+							value={last_name}
+							onChange={e => setLast_name(e.target.value)}
+						/>
+						<input
+							type="email"
+							id="defaultLoginFormEmail"
+							className="form-control mb-4"
+							placeholder="E-mail"
+							value={email}
+							onChange={e => setEmail(e.target.value)}
+						/>
 
-					<input
-						type="password"
-						id="defaultLoginFormPassword"
-						className="form-control mb-4"
-						placeholder="Password"
-						value={password}
-						onChange={e => setPassword(e.target.value)}
-					/>
+						<input
+							type="password"
+							id="defaultLoginFormPassword"
+							className="form-control mb-4"
+							placeholder="Password"
+							value={password}
+							onChange={e => setPassword(e.target.value)}
+						/>
 
-					{/* <div className="d-flex justify-content-around">
+						{/* <div className="d-flex justify-content-around">
 						<div>
 							<div className="custom-control custom-checkbox">
 								<input type="checkbox" className="custom-control-input" id="defaultLoginFormRemember" />
@@ -204,17 +241,19 @@ export const Login = props => {
 						</div>
 					</div> */}
 
-					<button className="btn btn-info btn-block my-4" type="submit">
-						Sign Up
-					</button>
+						<button className="btn btn-info btn-block my-4" type="submit">
+							Sign Up
+						</button>
 
-					<p>
-						Do you already have an account?
-						{/* <a href="">Sign In</a> */}
-						<span onClick={() => props.setHasAccount(!hasAccount)}> Sign In</span>
-					</p>
+						<p>
+							Do you already have an account?
+							{/* <a href="#signIn">
+							Sign In
+						</a> */}
+							<span onClick={() => props.setHasAccount(!hasAccount)}> Sign In</span>
+						</p>
 
-					{/* <p>or sign in with:</p>
+						{/* <p>or sign in with:</p>
 
 				<a href="#" className="mx-2" role="button">
 					<i className="fab fa-facebook-f light-blue-text"></i>
@@ -228,7 +267,8 @@ export const Login = props => {
 				<a href="#" className="mx-2" role="button">
 					<i className="fab fa-github light-blue-text"></i>
 				</a> */}
-				</form>
+					</form>
+				</div>
 			)}
 			{/* <Link to="/">
 				<button className="btn btn-primary">Back home</button>
@@ -242,5 +282,6 @@ Login.propTypes = {
 	setHasAccount: PropTypes.func,
 	ID: PropTypes.number,
 	setID: PropTypes.func,
-	setLoggedIn: PropTypes.func
+	setLoggedIn: PropTypes.func,
+	setLoggedInWithGoogle: PropTypes.func
 };
