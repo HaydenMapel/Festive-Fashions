@@ -8,9 +8,10 @@ import "../../styles/demo.scss";
 
 export const Cart = () => {
 	const { store, actions } = useContext(Context);
-	const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")));
-	const [paid, setPaid] = useState(false);
-
+	const [cart, setCart] = useState([]);
+	if (localStorage.getItem("cart")) {
+		setCart(JSON.parse(localStorage.getItem("cart")));
+	}
 	console.log(cart);
 	console.log(store);
 
@@ -38,20 +39,23 @@ export const Cart = () => {
 	}
 
 	let content = "";
-	content = cart.map((product, index) => (
-		<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
-	));
-
+	if (cart.length == 0) {
+		content = <h4>No Products in Your Cart!</h4>;
+	} else {
+		content = cart.map((product, index) => (
+			<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
+		));
+	}
 	let totalPrice = (getSubtotal() + getShipping()).toFixed(2);
 	console.log(totalPrice);
 
-	let checkoutButton = (
-		<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
-	);
+	// let checkoutButton = (
+	// 	<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+	// );
 
-	if (sessionStorage.getItem("loggedIn")) {
-		checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
-	}
+	// if (sessionStorage.getItem("loggedIn")) {
+	// 	checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
+	// }
 
 	return (
 		<div className="container blackBG text-light">
@@ -65,9 +69,7 @@ export const Cart = () => {
 						<div>Shipping ${getShipping().toFixed(2)}</div>
 						<div>Total ${totalPrice}</div>
 					</div>
-					<div>{checkoutButton}</div>
-					{/* <button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
-					<PayPalButtons totalPrice={totalPrice} /> */}
+					<PayPalButtons totalPrice={totalPrice} />
 				</div>
 			</div>
 			<Link to="/">
