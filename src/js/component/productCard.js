@@ -22,7 +22,7 @@ export const ProductCard = props => {
 			// create cart object
 			let cartItem = {};
 			cartItem.size = size;
-			cartItem.id = props.product.id;
+			cartItem.ID = props.product.ID;
 			cartItem.count = parseInt(count);
 			alert(count + " " + props.product.name + " size " + size + " added to cart");
 
@@ -33,9 +33,9 @@ export const ProductCard = props => {
 			}
 
 			// check if product already exists in cart and add to existing item if so
-			if (cart.some(product => cartItem.id == product.id && cartItem.size == product.size)) {
+			if (cart.some(product => cartItem.ID == product.ID && cartItem.size == product.size)) {
 				cart.forEach(function(product) {
-					if (cartItem.id == product.id && cartItem.size == product.size)
+					if (cartItem.ID == product.ID && cartItem.size == product.size)
 						product.count = product.count + cartItem.count;
 				});
 			} else cart.push(cartItem);
@@ -49,9 +49,16 @@ export const ProductCard = props => {
 	return (
 		<div className="card col-6 my-3 border-0">
 			<div className="card-body text-center font-weight-bold">
-				<h5 className="card-title">{props.product.name}</h5>
-				<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
-				<div>
+				<Link
+					className=" card-title h5"
+					to={{
+						pathname: "/product/" + props.product.ID
+					}}>
+					<h5 className="card-title">{props.product.name}</h5>
+					<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
+				</Link>
+				<div>${props.product.price}</div>
+				{/* <div>
 					<Form noValidate onSubmit={addToCart}>
 						<Form.Row className="my-3">
 							<div className="col-6">
@@ -87,7 +94,7 @@ export const ProductCard = props => {
 									</ToggleButton>
 								</ToggleButtonGroup>
 								<Form.Group controlId="exampleForm.ControlSelect1">
-									{/* <Form.Label>Quantity</Form.Label> */}
+									<Form.Label>Quantity</Form.Label>
 									<Form.Control
 										size="sm"
 										as="select"
@@ -108,8 +115,14 @@ export const ProductCard = props => {
 							</div>
 						</Form.Row>
 					</Form>
-				</div>
+				</div> */}
 				<p className="card-text text-left font-weight-normal">{props.product.short_description}</p>
+				<Link
+					to={{
+						pathname: "/product/" + props.product.ID
+					}}>
+					<button className="btn btn-danger">Learn more about this product</button>
+				</Link>
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 export const CartCard = props => {
 	const { store, actions } = useContext(Context);
-	let product = actions.getProduct(props.product.id);
+	let product = actions.getProduct(props.product.ID);
 
 	return (
 		<div className="row darkBG">
@@ -13,7 +13,7 @@ export const CartCard = props => {
 			<div className="col-2">{product.name}</div>
 			<div className="col-2">Size: {props.product.size}</div>
 			<div className="col-2">Quantity: {props.product.count}</div>
-			<div className="col-2">${(product.price * props.product.count).toFixed(2)}</div>
+			<div className="col-2">${(parseFloat(product.price) * props.product.count).toFixed(2)}</div>
 			<button
 				className="col-2 text-danger btn btn-outline-light font-weight-bold"
 				type="button"

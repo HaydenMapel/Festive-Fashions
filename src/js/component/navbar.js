@@ -95,11 +95,6 @@ export const Navbar = props => {
 							</Link>
 						</li>
 						<li>
-							<Link to="/productList">
-								<span className="navbar-brand mb-0 navText">productList</span>
-							</Link>
-						</li>
-						<li>
 							<Link to="/product">
 								<span className="navbar-brand mb-0 navText">Shop</span>
 							</Link>
