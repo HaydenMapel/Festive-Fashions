@@ -53,18 +53,18 @@ const Layout = () => {
 						<Route exact path="/product">
 							<ProductList />
 						</Route>
-            <Route exact path="/product/christmas">
-						  <Christmas />
-					  </Route>
-					  <Route exact path="/product/newyears">
-						  <NewYears />
-					  </Route>
-					  <Route exact path="/product/valentines">
-						  <Valentines />
-					  </Route>
-					  <Route exact path="/product/:ID">
-						  <ProductDetail />
-				  	</Route>
+						<Route exact path="/product/christmas">
+							<Christmas />
+						</Route>
+						<Route exact path="/product/newyears">
+							<NewYears />
+						</Route>
+						<Route exact path="/product/valentines">
+							<Valentines />
+						</Route>
+						<Route exact path="/product/:ID">
+							<ProductDetail />
+						</Route>
 						<Route exact path="/cart">
 							<Cart />
 						</Route>
@@ -77,9 +77,6 @@ const Layout = () => {
 								setLoggedIn={setLoggedIn}
 								setLoggedInWithGoogle={setLoggedInWithGoogle}
 							/>
-						</Route>
-						<Route exact path="/register">
-							<Register />
 						</Route>
 						<Route exact path="/about">
 							<About />
