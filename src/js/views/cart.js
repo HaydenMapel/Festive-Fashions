@@ -49,14 +49,6 @@ export const Cart = () => {
 	let totalPrice = (getSubtotal() + getShipping()).toFixed(2);
 	console.log(totalPrice);
 
-	// let checkoutButton = (
-	// 	<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
-	// );
-
-	// if (sessionStorage.getItem("loggedIn")) {
-	// 	checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
-	// }
-
 	return (
 		<div className="container blackBG text-light">
 			<h2 className="text-center text-danger">Cart</h2>
