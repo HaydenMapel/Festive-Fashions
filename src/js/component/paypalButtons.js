@@ -39,7 +39,7 @@ export const PayPalButtons = props => {
 
 	// If the payment has been made
 	if (paid) {
-		localStorage.setItem("cart", JSON.stringify([]));
+		localStorage.removeItem("cart");
 		history.push("/");
 		alert("Payment successful!");
 		return <div>Payment successful!</div>;
@@ -51,7 +51,7 @@ export const PayPalButtons = props => {
 	}
 
 	return (
-		<div>
+		<div className="container-fluid">
 			<div ref={paypalRef} />
 		</div>
 	);

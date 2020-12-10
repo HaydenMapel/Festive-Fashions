@@ -58,64 +58,6 @@ export const ProductCard = props => {
 					<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
 				</Link>
 				<div>${props.product.price}</div>
-				{/* <div>
-					<Form noValidate onSubmit={addToCart}>
-						<Form.Row className="my-3">
-							<div className="col-6">
-								<div>${props.product.price}</div>
-								<ToggleButtonGroup type="radio" name="options" className="btn-danger" required>
-									<ToggleButton
-										className="btn-danger form-control"
-										value={"S"}
-										required
-										onChange={e => setSize(e.target.value)}>
-										S
-									</ToggleButton>
-									<ToggleButton
-										className="btn-danger form-control"
-										value={"M"}
-										required
-										onChange={e => setSize(e.target.value)}>
-										M
-									</ToggleButton>
-									<ToggleButton
-										className="btn-danger form-control"
-										value={"L"}
-										required
-										onChange={e => setSize(e.target.value)}>
-										L
-									</ToggleButton>
-									<ToggleButton
-										className="btn-danger form-control"
-										value={"XL"}
-										required
-										onChange={e => setSize(e.target.value)}>
-										XL
-									</ToggleButton>
-								</ToggleButtonGroup>
-								<Form.Group controlId="exampleForm.ControlSelect1">
-									<Form.Label>Quantity</Form.Label>
-									<Form.Control
-										size="sm"
-										as="select"
-										defaultValue="1"
-										onChange={e => setCount(e.target.value)}>
-										<option value={1}>1</option>
-										<option value={2}>2</option>
-										<option value={3}>3</option>
-										<option value={4}>4</option>
-										<option value={5}>5</option>
-									</Form.Control>
-								</Form.Group>
-							</div>
-							<div className="col-6">
-								<button className="btn btn-danger" type="submit">
-									Add to Cart
-								</button>
-							</div>
-						</Form.Row>
-					</Form>
-				</div> */}
 				<p className="card-text text-left font-weight-normal">{props.product.short_description}</p>
 				<Link
 					to={{

@@ -14,7 +14,7 @@ import { Contact } from "./views/contact";
 import { UserPage } from "./views/userPage";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { NavbarComp } from "./component/navbar";
 import { Footer } from "./component/footer";
 //import "../../styles/home.scss";
 import "../styles/home.scss";
@@ -38,7 +38,7 @@ const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
 				<div>
-					<Navbar
+					<NavbarComp
 						loggedIn={loggedIn}
 						setLoggedIn={setLoggedIn}
 						loggedInWithGoogle={loggedInWithGoogle}

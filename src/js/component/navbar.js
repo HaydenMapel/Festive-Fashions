@@ -5,8 +5,10 @@ import { useHistory } from "react-router-dom";
 import { SignOutButton } from "./signOutButton.js";
 import { GoogleLogout } from "react-google-login";
 import "../../styles/home.scss";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
-export const Navbar = props => {
+export const NavbarComp = props => {
 	const history = useHistory();
 	let action = "";
 	let userPage = "";
@@ -45,21 +47,17 @@ export const Navbar = props => {
 			// </button>
 		);
 		userPage = (
-			<Link to={`/userPage/${md5}`}>
-				<span className="navbar-brand mb-0 h1">Account</span>
+			<Link className="mx-2" to={`/userPage/${md5}`}>
+				Account
 			</Link>
 		);
 		//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
 	} else if (props.loggedIn !== "true") {
-		action = (
-			<Link to="/logIn">
-				<span className="navbar-brand mb-0 navText">LogIn</span>
-			</Link>
-		);
+		action = <Link to="/logIn">Login</Link>;
 	} else {
 		action = (
 			<button
-				className="loggedOutButton"
+				className="loggedOutButton mx-2"
 				onClick={() => {
 					sessionStorage.clear();
 					let isLoggedIn = sessionStorage.getItem("loggedIn");
@@ -70,52 +68,45 @@ export const Navbar = props => {
 			</button>
 		);
 		userPage = (
-			<Link to={`/userPage/${md5}`}>
-				<span className="navbar-brand mb-0 h1">Account</span>
+			<Link className="mx-2" to={`/userPage/${md5}`}>
+				Account
 			</Link>
 		);
 	}
 
 	return (
-		<nav className=" navbar fixed-top ">
+		<Navbar expand="lg" bg="dark" variant="dark" fixed="top">
 			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 navText">Logo</span>
-				</Link>
-				<div className="ml-auto">
-					<ul className="navUl">
-						<li>
-							<Link to="/">
-								<span className="navbar-brand mb-0 navText">home</span>
+				<Navbar.Brand>
+					<Link to="/">Logo</Link>
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+				<Navbar.Collapse id="responsive-navbar-nav">
+					<Nav className="ml-auto">
+						<Nav.Item className="mx-2">
+							<Link to="/">Home</Link>
+						</Nav.Item>
+						<Nav.Item className="mx-2">
+							<Link to="/about">About</Link>
+						</Nav.Item>
+						<Nav.Item className="mx-2">
+							<Link to="/product">Shop</Link>
+						</Nav.Item>
+						<Nav.Item>{userPage}</Nav.Item>
+						<Nav.Item className="mx-2">{action}</Nav.Item>
+						<Nav.Item className="mx-2">
+							<Link to="/cart">
+								<i className="fas fa-shopping-cart" />
 							</Link>
-						</li>
-						<li>
-							<Link to="/about">
-								<span className="navbar-brand mb-0 navText">About</span>
-							</Link>
-						</li>
-						<li>
-							<Link to="/product">
-								<span className="navbar-brand mb-0 navText">Shop</span>
-							</Link>
-						</li>
-						<li>{userPage}</li>
-					</ul>
-				</div>
-				<div>
-					<span className="navbar-brand mb-0 navText">{action}</span>
-					<Link to="/cart">
-						<span className="navbar-brand mb-0 navText">
-							<i className="fas fa-shopping-cart" />
-						</span>
-					</Link>
-				</div>
+						</Nav.Item>
+					</Nav>
+				</Navbar.Collapse>
 			</div>
-		</nav>
+		</Navbar>
 	);
 };
 
-Navbar.propTypes = {
+NavbarComp.propTypes = {
 	loggedIn: PropTypes.string,
 	setLoggedIn: PropTypes.func,
 	loggedInWithGoogle: PropTypes.string,
