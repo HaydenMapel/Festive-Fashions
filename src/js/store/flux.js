@@ -138,7 +138,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//This function loads the data from the WordPress API
 			loadLoginData: () => {
 				let url =
-					"https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io/wp-json/sample_api/v1/userLogIn";
+					"https://8080-ad6fc485-eff3-4cd8-bdfe-28bbca13c6e7.ws-us03.gitpod.io/wp-json/sample_api/v1/userLogIn";
+				// "https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io/wp-json/sample_api/v1/userLogIn";
 				fetch(url)
 					.then(response => {
 						if (response.status === 200) {
@@ -159,7 +160,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			loadProductData: () => {
 				let url =
-					"https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io//wp-json/sample_api/v1/product";
+					"https://8080-ad6fc485-eff3-4cd8-bdfe-28bbca13c6e7.ws-us03.gitpod.io/wp-json/sample_api/v1/product";
+				// "https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io//wp-json/sample_api/v1/product";
 				fetch(url)
 					.then(response => {
 						if (response.status === 200) {
@@ -244,7 +246,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//add a new user to database and return ID
 				//let ID = getActions().addRemoteUser(newUser);
 				let url =
-					"https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io/wp-json/sample_api/v1/userLogIn";
+					"https://8080-ad6fc485-eff3-4cd8-bdfe-28bbca13c6e7.ws-us03.gitpod.io/wp-json/sample_api/v1/userLogIn";
+				//"https://8080-d98e4eed-9164-4d0c-baa2-d9b70a00edbf.ws-us02.gitpod.io/wp-json/sample_api/v1/userLogIn";
 
 				const users = getStore().users;
 				let isSameEmail = false;

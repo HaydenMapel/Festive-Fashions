@@ -37,42 +37,89 @@ export const Cart = () => {
 		return total;
 	}
 
-	let content = "";
-	content = cart.map((product, index) => (
-		<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
-	));
+	// let content = "";
+	// content = cart.map((product, index) => (
+	// 	<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
+	// ));
 
-	let totalPrice = (getSubtotal() + getShipping()).toFixed(2);
-	console.log(totalPrice);
+	// let totalPrice = (getSubtotal() + getShipping()).toFixed(2);
+	// console.log(totalPrice);
 
-	let checkoutButton = (
-		<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
-	);
+	// let checkoutButton = (
+	// 	<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+	// );
 
-	if (sessionStorage.getItem("loggedIn")) {
-		checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
+	// if (sessionStorage.getItem("loggedIn")) {
+	// 	checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
+	// }
+
+	//if the cart is empty or null we get an error when rendering the page the first time
+	// we can use conditional rendering to avoid this
+	let result = "";
+	if (localStorage.getItem("cart") === null) {
+		result = (
+			<div>
+				<h1 style={{ color: "white" }}>YOUR CART IS EMPTY!</h1>
+			</div>
+		);
+	} else {
+		let content = "";
+		content = cart.map((product, index) => (
+			<CartCard key={index} product={product} index={index} deleteCartItem={deleteCartItem} />
+		));
+		let totalPrice = (getSubtotal() + getShipping()).toFixed(2);
+		console.log(totalPrice);
+
+		let checkoutButton = (
+			<button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+		);
+
+		if (sessionStorage.getItem("loggedIn")) {
+			checkoutButton = <PayPalButtons totalPrice={totalPrice} />;
+		}
+		result = (
+			<div className="container blackBG text-light">
+				<h2 className="text-center text-danger">Cart</h2>
+				<div className="row">
+					<div className="col-8">{content}</div>
+					<div className="col-4 text-center">
+						<div className="darkBG m-3">Login or Username</div>
+						<div className="darkBG">
+							<div>Subtotal ${getSubtotal().toFixed(2)}</div>
+							<div>Shipping ${getShipping().toFixed(2)}</div>
+							<div>Total ${totalPrice}</div>
+						</div>
+						<div>{checkoutButton}</div>
+						{/* <button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+					<PayPalButtons totalPrice={totalPrice} /> */}
+					</div>
+				</div>
+				<Link to="/">
+					<button className="btn btn-primary">Back home</button>
+				</Link>
+			</div>
+		);
 	}
 
-	return (
-		<div className="container blackBG text-light">
-			<h2 className="text-center text-danger">Cart</h2>
-			<div className="row">
-				<div className="col-8">{content}</div>
-				<div className="col-4 text-center">
-					<div className="darkBG m-3">Login or Username</div>
-					<div className="darkBG">
-						<div>Subtotal ${getSubtotal().toFixed(2)}</div>
-						<div>Shipping ${getShipping().toFixed(2)}</div>
-						<div>Total ${totalPrice}</div>
-					</div>
-					<div>{checkoutButton}</div>
-					{/* <button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
-					<PayPalButtons totalPrice={totalPrice} /> */}
-				</div>
-			</div>
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
-		</div>
-	);
+	return result;
+	// <div className="container blackBG text-light">
+	// 	<h2 className="text-center text-danger">Cart</h2>
+	// 	<div className="row">
+	// 		<div className="col-8">{content}</div>
+	// 		<div className="col-4 text-center">
+	// 			<div className="darkBG m-3">Login or Username</div>
+	// 			<div className="darkBG">
+	// 				<div>Subtotal ${getSubtotal().toFixed(2)}</div>
+	// 				<div>Shipping ${getShipping().toFixed(2)}</div>
+	// 				<div>Total ${totalPrice}</div>
+	// 			</div>
+	// 			<div>{checkoutButton}</div>
+	// 			{/* <button className="btn btn-danger rounded-pill btn-block mx-auto">Login to Checkout with Paypal</button>
+	// 			<PayPalButtons totalPrice={totalPrice} /> */}
+	// 		</div>
+	// 	</div>
+	// 	<Link to="/">
+	// 		<button className="btn btn-primary">Back home</button>
+	// 	</Link>
+	// </div>
 };

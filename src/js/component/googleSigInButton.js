@@ -37,6 +37,7 @@ export const GoogleSignInButton = props => {
 
 	let onFailure = response => {
 		console.log("[Login failed] response: ", response);
+		alert("Unable to Sign In");
 	};
 	return (
 		<GoogleLogin

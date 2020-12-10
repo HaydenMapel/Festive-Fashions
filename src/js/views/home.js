@@ -10,22 +10,20 @@ import Carousel from "react-bootstrap/Carousel";
 export const Home = () => (
 	<div>
 		<Carousel>
-			<Carousel.Item>
+			<Carousel.Item interval={1000}>
 				<img className="d-block w-100" src={winter} alt="First slide" />
 				{/* <button className="caruselButton">Shop Now!</button> */}
 				<Carousel.Caption>
-					<Link to="/product" className="shopNowLink">
-						<h3>Shop Now!</h3>
+					<Link to="/product" className="linkInlandingPage">
+						<h3 className="shopNowLink">Shop Now!</h3>
 					</Link>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				{/* interval={1000} */}
 				<img className="d-block w-100" src={newYear} alt="Third slide" />
-
-				<Carousel.Caption>
-					<Link to="/product" className="shopNowLink">
-						<h3>Shop Now!</h3>
+				<Carousel.Caption interval={1000}>
+					<Link to="/product" className="linkInlandingPage">
+						<h3 className="shopNowLink">Shop Now!</h3>
 					</Link>
 				</Carousel.Caption>
 			</Carousel.Item>
