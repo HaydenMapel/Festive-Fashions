@@ -26,6 +26,7 @@ export const Contact = () => {
 		emailjs.send("service_72uiiku", "template_b62hw5i", templateParams, "user_livOtwA3ThXGO7bbt4ixB").then(
 			result => {
 				console.log(result.text);
+				alert("Message Sent!");
 			},
 			error => {
 				console.log(error.text);
