@@ -78,7 +78,7 @@ export const NavbarComp = props => {
 		<Navbar expand="lg" bg="dark" variant="dark" fixed="top">
 			<div className="container">
 				<Navbar.Brand>
-					<Link to="/">Logo</Link>
+					<Link to="/">Festive Fashions</Link>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
@@ -87,10 +87,10 @@ export const NavbarComp = props => {
 							<Link to="/">Home</Link>
 						</Nav.Item>
 						<Nav.Item className="mx-2">
-							<Link to="/about">About</Link>
+							<Link to="/product">Shop</Link>
 						</Nav.Item>
 						<Nav.Item className="mx-2">
-							<Link to="/product">Shop</Link>
+							<Link to="/about">About</Link>
 						</Nav.Item>
 						<Nav.Item>{userPage}</Nav.Item>
 						<Nav.Item className="mx-2">{action}</Nav.Item>

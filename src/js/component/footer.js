@@ -8,9 +8,9 @@ export const Footer = () => {
 		<MDBFooter id="MDBFooter" color="blue" className="font-small pt-4 footer ">
 			<MDBContainer fluid className="text-center text-md-left">
 				<MDBRow>
-					<MDBCol md="3">
-						<h5 className="title">Follow Us</h5>
-						<ul className="footer-ul">
+					<MDBCol md="4">
+						<h5 className="title d-inline mr-3">Follow Us</h5>
+						<ul className="footer-ul d-inline">
 							<li className="list-unstyled">
 								<a href="#!" className="fb-ic mr-3">
 									<MDBIcon fab icon="facebook-f" />
@@ -33,20 +33,19 @@ export const Footer = () => {
 							</li>
 						</ul>
 					</MDBCol>
-					<MDBCol md="3">
-						<h5>CountDown</h5>
+					<MDBCol md="4" className="text-center">
+						Copyright &copy; {new Date().getFullYear()} Festive Fashions
 					</MDBCol>
-					<MDBCol md="3">
+					<MDBCol md="4">
 						<Link to="/contact">Contact Us</Link>
 					</MDBCol>
 				</MDBRow>
 			</MDBContainer>
-			<div className="footer-copyright text-center py-3">
+			{/* <div className="footer-copyright text-center py-3">
 				<MDBContainer fluid>
-					&copy; {new Date().getFullYear()} Copyright:{" "}
-					<a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+					Copyright &copy; {new Date().getFullYear()} Festive Fashions
 				</MDBContainer>
-			</div>
+			</div> */}
 		</MDBFooter>
 	);
 };
