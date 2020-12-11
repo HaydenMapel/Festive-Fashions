@@ -36,7 +36,7 @@ export const PayPalButtons = props => {
 			})
 			.render(paypalRef.current);
 	}, [props.totalPrice]);
-
+	console.log("rerendering paypal buttons");
 	// If the payment has been made
 	if (paid) {
 		localStorage.removeItem("cart");
