@@ -1,52 +1,41 @@
-.darkBG {
-    background-color: #181818;
-}
-.blackBG {
-    background-color: #000000 ;
-}
+// .darkBG {
+//     background-color: #181818;
+// }
+// .blackBG {
+//     background-color: #000000 ;
+// }
 
-
+//style the navbar
 .navbar{
-    background-color: black;
-    margin: auto;
+    background: rgb(7,33,87);
+   background: rgb(2,0,5);
+   background: linear-gradient(90deg, rgba(2,0,5,1) 49%, rgba(45,3,71,1) 92%);
+    //background-color: black;
+    //margin: auto;
 }
 .navText{
     color: white;
 }
-nav div ul{
-    list-style: none;
-    margin-bottom: auto;
-}
-nav div ul li{
-   
-    display: inline;
-}
-.ml-auto{
-    display: inline-flex;
-    align-items: center;
-}
-#loginButton{
-    margin-right: 10px;
-}
-body{
-    //background-color: rgb(91, 103, 104);
-   // background-color: black;
-   padding-top: 66px;
-    background: rgb(7,33,87);
-background: rgb(2,0,5);
-background: linear-gradient(90deg, rgba(2,0,5,1) 49%, rgba(45,3,71,1) 92%);
-    
+.navText:hover{
+    text-decoration: none;
+    color: whitesmoke;
+    text-shadow:5px 5px 5px whitesmoke;
 }
 
-
+//define the background color in the body and adjust the visibility of the body blocked by navbar with the paddig 
+body{ 
+   padding-top: 56px;
+   background: rgb(7,33,87);
+   background: rgb(2,0,5);
+   background: linear-gradient(90deg, rgba(2,0,5,1) 49%, rgba(45,3,71,1) 92%);   
+}
 
 .footer{
     background-color: black;
     color: white;
     position:sticky;
-  bottom: 0;
-  width: 100%;
-  //height: 2.5rem;
+    bottom: 0;
+    width: 100%;
 }
 .footer-copyright{
     background-color: #263238;

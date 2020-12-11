@@ -20,32 +20,12 @@ export const NavbarComp = props => {
 
 		//display aler message
 		alert("You just Logged Out! ", <i className="fas fa-check-circle"></i>);
-
-		// sessionStorage.clear();
-		// let isLoggedIn = sessionStorage.getItem("loggedInWithGoogle");
-		// props.setLoggedInWithGoogle(isLoggedIn);
-
-		// //Redirect the user to the home page after loggin in
-		// history.push("/");
-		// console.log(sessionStorage);
 	};
 
 	//check if user logged in with google
 	if (props.loggedInWithGoogle == "true") {
 		//display a google log out button, clear the session storage and redirect the user to the home page
-		action = (
-			<SignOutButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />
-
-			// <button
-			// 	onClick={() => {
-			// 		sessionStorage.clear();
-			// 		let isLoggedIn = sessionStorage.getItem("loggedInWithGoogle");
-			// 		props.setLoggedInWithGoogle(isLoggedIn);
-			// 		history.push("/");
-			// 	}}>
-			// 	Google_LogOut
-			// </button>
-		);
+		action = <SignOutButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />;
 		userPage = (
 			<Link className="mx-2" to={`/userPage/${md5}`}>
 				Account
@@ -53,7 +33,11 @@ export const NavbarComp = props => {
 		);
 		//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
 	} else if (props.loggedIn !== "true") {
-		action = <Link to="/logIn">Login</Link>;
+		action = (
+			<Link to="/logIn" className="navText">
+				Login
+			</Link>
+		);
 	} else {
 		action = (
 			<button
@@ -68,35 +52,43 @@ export const NavbarComp = props => {
 			</button>
 		);
 		userPage = (
-			<Link className="mx-2" to={`/userPage/${md5}`}>
+			<Link className="mx-2 navText" to={`/userPage/${md5}`}>
 				Account
 			</Link>
 		);
 	}
 
 	return (
-		<Navbar expand="lg" bg="dark" variant="dark" fixed="top">
+		<Navbar expand="lg" variant="dark" fixed="top">
 			<div className="container">
 				<Navbar.Brand>
-					<Link to="/">Logo</Link>
+					<Link to="/" className="navText">
+						Logo
+					</Link>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto">
 						<Nav.Item className="mx-2">
-							<Link to="/">Home</Link>
+							<Link to="/" className="navText">
+								Home
+							</Link>
 						</Nav.Item>
 						<Nav.Item className="mx-2">
-							<Link to="/about">About</Link>
+							<Link to="/about" className="navText">
+								About
+							</Link>
 						</Nav.Item>
 						<Nav.Item className="mx-2">
-							<Link to="/product">Shop</Link>
+							<Link to="/product" className="navText">
+								Shop
+							</Link>
 						</Nav.Item>
 						<Nav.Item>{userPage}</Nav.Item>
-						<Nav.Item className="mx-2">{action}</Nav.Item>
+						<Nav.Item className="mx-2 navText">{action}</Nav.Item>
 						<Nav.Item className="mx-2">
 							<Link to="/cart">
-								<i className="fas fa-shopping-cart" />
+								<i className="fas fa-shopping-cart navText" />
 							</Link>
 						</Nav.Item>
 					</Nav>
