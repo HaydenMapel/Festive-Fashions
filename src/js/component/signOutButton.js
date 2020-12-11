@@ -22,7 +22,7 @@ export const SignOutButton = props => {
 	return (
 		<a
 			href=""
-			className="singOutButton"
+			className="signOutButton"
 			onClick={() => {
 				signOut();
 			}}>

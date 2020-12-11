@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 //import { Link, useParams } from "react-router-dom";
-//import { Context } from "../store/appContext";
+import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { GoogleSignInButton } from "../component/googleSigInButton.js";
 //import { UserPage } from "./userPage";
@@ -13,7 +13,7 @@ export const Login = props => {
 	let hasAccount = props.hasAccount;
 	//const clientID = "186674746870-2ihe83atnv1b8najstagj2u34rqbt5gn.apps.googleusercontent.com";
 	const history = useHistory();
-	//const { store, actions } = useContext(Context);
+	const { store, actions } = useContext(Context);
 
 	//variables to hold user inputs
 	const [name, setName] = useState("");
@@ -114,7 +114,7 @@ export const Login = props => {
 
 	return (
 		<div className="container logInForm">
-			{hasAccount ? (
+			{!hasAccount ? (
 				<div>
 					<form className="text-center border border-dark p-5" action="#!" onSubmit={handleSubmitSignIn}>
 						<p className="h4 mb-4 titleForm">Sign in</p>
@@ -136,21 +136,6 @@ export const Login = props => {
 							value={password}
 							onChange={e => setPassword(e.target.value)}
 						/>
-
-						{/* <div className="d-flex justify-content-around">
-						<div>
-							<div className="custom-control custom-checkbox">
-								<input type="checkbox" className="custom-control-input" id="defaultLoginFormRemember" />
-								<label className="custom-control-label" htmlor="defaultLoginFormRemember">
-									Remember me
-								</label>
-							</div>
-						</div>
-						<div>
-							<a href="">Forgot password?</a>
-						</div>
-					</div> */}
-
 						<button className="btn btn-info btn-block my-4" type="submit">
 							Sign in
 						</button>
@@ -165,27 +150,6 @@ export const Login = props => {
 
 						<p>or sign in with:</p>
 						<GoogleSignInButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />
-						{/* add google button */}
-						{/* <div className="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> */}
-						{/* <GoogleLogin
-							clientId={clientID}
-							buttonText="Sign In"
-							onSuccess={onSuccess}
-							onFailure={onFailure}
-							cookiePolicy={"single_host_origin"}
-						/> */}
-						<a href="#" className="mx-2" role="button">
-							<i className="fab fa-facebook-f light-blue-text" />
-						</a>
-						<a href="#" className="mx-2" role="button">
-							<i className="fab fa-twitter light-blue-text" />
-						</a>
-						<a href="#" className="mx-2" role="button">
-							<i className="fab fa-linkedin-in light-blue-text" />
-						</a>
-						<a href="#" className="mx-2" role="button">
-							<i className="fab fa-github light-blue-text" />
-						</a>
 					</form>
 				</div>
 			) : (

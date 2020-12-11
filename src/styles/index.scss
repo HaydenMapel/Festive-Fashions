@@ -1,51 +1,48 @@
-.darkBG {
-    background-color: #181818;
+.navbar{
+    background-color: black;
+    margin: auto;
 }
-.blackBG {
-    background-color: #000000 ;
+.navText{
+    color: white;
 }
-
-/* 
-    General Styles
-*/
-//add style to the navbar
-// .navbar{
-//     background-color: black;
-//     margin: auto;
-// }
-// .navText{
-//     color: white;
-// }
-// nav div ul{
-//     list-style: none;
-//     margin-bottom: auto;
-// }
-// nav div ul li{
+nav div ul{
+    list-style: none;
+    margin-bottom: auto;
+}
+nav div ul li{
    
-//     display: inline;
-// }
-// .ml-auto{
-//     display: inline-flex;
-//     align-items: center;
-// }
+    display: inline;
+}
+.ml-auto{
+    display: inline-flex;
+    align-items: center;
+}
 #loginButton{
     margin-right: 10px;
 }
 body{
-    background-color: rgb(91, 103, 104);
-    padding-top: 55.6px;
+    //background-color: rgb(91, 103, 104);
+   // background-color: black;
+   padding-top: 66px;
+    background: rgb(7,33,87);
+background: rgb(2,0,5);
+background: linear-gradient(90deg, rgba(2,0,5,1) 49%, rgba(45,3,71,1) 92%);
     
 }
+#fullPageContainer {
+    
+}
+// About Page CSS
+#aboutContainer {
 
-
+}
 
 .footer{
     background-color: black;
     color: white;
     position:sticky;
-  bottom: 0;
-  width: 100%;
-  //height: 2.5rem;
+    bottom: 0;
+    width: 100%;
 }
 .footer-copyright{
     background-color: #263238;
@@ -58,15 +55,14 @@ body{
 }
 .footer-ul li a{
     background-image: linear-gradient(to bottom left, rgb(247, 3, 174), rgb(243, 136, 211));
-    height: 42px;
-  width: 42px;
-// background-color: white;
-   color: white; // #ff4081
-  padding: 10px;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+    height: 40px;
+    width: 40px;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
   
 }
 #MDBFooter{
@@ -86,57 +82,41 @@ span{
 
 .logInForm{
     width: auto;
-    margin: auto;
-    //margin-bottom: 240px;
-    
+    margin: auto;    
 }
 
 .logInForm form {
     width: 350px;
     height: 500px;
-    background-color: white;
+    background-color: whitesmoke;
+    margin: auto;
+    margin-block: 60px;
+    //margin-top: 125px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 13px grey;
 }
 //Landing page shop now link
 .shopNowLink{
     text-decoration: none;
     cursor:pointer;
     color: white;
-    border: 3px solid black;
-    width: 170px;
+    padding: 7px;
+    width: 200px;
     margin: auto;
     border-radius: 20px;
-    background-color: black;
+    background: rgb(96,96,122);
+    background: linear-gradient(90deg, rgba(96,96,122,1) 10%, rgba(15,16,18,1) 100%);
 }
 .shopNowLink:hover{
-    text-decoration: none;
-    color: black;
-    background-color: white;
+    color: white;
+    background: rgb(15,16,18);
+    background: linear-gradient(90deg, rgba(15,16,18,1) 26%, rgba(96,96,122,1) 85%);
 }
-.shopNowLink:link{
+.linkInlandingPage:link{
     text-decoration: none;
 }
-// .displayOff{
-//     display: auto;
-// }
-// #signUp{
-//     display: none;
-// }
-// .displayOn{
-//     display: none;
-// }
+.carousel-caption{
+  width: 200px;
+  margin: auto;
+}
 
-//display the button inside the carusel picture in the home page
-// .caruselButton{
-//     position: absolute;
-//     top: 171px;
-//     right: 600px;
-//     width: 250px;
-//     height: 58px;
-//     border: 3px solid #00f8ff;
-//     background: black;
-//     color: white;
-//     font-size: 28px;
-//     text-align: center;
-//     border-radius: 9px;
-//     animation: auto;
-// }
