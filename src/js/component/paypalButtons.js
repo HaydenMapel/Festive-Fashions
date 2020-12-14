@@ -51,7 +51,7 @@ export const PayPalButtons = props => {
 	}
 
 	return (
-		<div className="container-fluid">
+		<div className="container-fluid p-0">
 			<div ref={paypalRef} />
 		</div>
 	);

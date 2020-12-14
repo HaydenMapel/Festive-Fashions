@@ -15,7 +15,7 @@ export const Cart = () => {
 	let subtotal = "";
 	let shipping = "";
 	if (!cart || cart.length == 0) {
-		content = <h4>No Products in Your Cart!</h4>;
+		content = <h4 className="m-3">No Products in Your Cart!</h4>;
 		subtotal = 0.0;
 		shipping = 0.0;
 	} else {
@@ -54,20 +54,19 @@ export const Cart = () => {
 		shipping = getShipping();
 	}
 	let totalPrice = (subtotal + shipping).toFixed(2);
-	console.log("rerendering card with price", totalPrice);
 
 	return (
 		<div className="container text-light">
 			<h2 className="text-center text-danger">Shopping Cart</h2>
-			<div className="row">
-				<div className="col-8">{content}</div>
-				<div className="col-4 text-center">
-					<div className="darkBG m-3">Login or Username</div>
-					<div className="darkBG">
-						<div>Subtotal ${subtotal.toFixed(2)}</div> <div>Shipping ${shipping.toFixed(2)}</div>
-						<div>Total ${totalPrice}</div>
+			<div className="row mt-3">
+				<div className="col-10 col-lg-7 m-1 mx-auto">{content}</div>
+				<div className="col-10 col-lg-3 card border-0 text-center m-1 mx-auto">
+					<div className="">
+						<div className="m-3 card-text text-dark">Subtotal ${subtotal.toFixed(2)}</div>
+						<div className="m-3 card-text text-dark">Shipping ${shipping.toFixed(2)}</div>
+						<div className="m-3 card-text text-dark font-weight-bold">Total ${totalPrice}</div>
 					</div>
-					<PayPalButtons key={totalPrice} totalPrice={totalPrice} />
+					<PayPalButtons key={totalPrice} totalPrice={totalPrice} className="m-3" />
 				</div>
 			</div>
 		</div>
