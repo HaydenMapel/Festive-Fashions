@@ -35,7 +35,7 @@ const Layout = () => {
 	const [hasAccount, setHasAccount] = useState(false);
 	const [ID, setID] = useState(null);
 	return (
-		<div id="fullPageContainer">
+		<div className="d-flex flex-column h-100" id="fullPageContainer">
 			<BrowserRouter basename={basename}>
 				<div>
 					<NavbarComp
