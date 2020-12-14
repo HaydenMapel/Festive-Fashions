@@ -57,8 +57,8 @@ export const Cart = () => {
 	console.log("rerendering card with price", totalPrice);
 
 	return (
-		<div className="container blackBG text-light">
-			<h2 className="text-center text-danger">Cart</h2>
+		<div className="container text-light">
+			<h2 className="text-center text-danger">Shopping Cart</h2>
 			<div className="row">
 				<div className="col-8">{content}</div>
 				<div className="col-4 text-center">

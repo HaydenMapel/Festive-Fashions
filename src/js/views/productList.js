@@ -12,7 +12,7 @@ export const ProductList = () => {
 
 	return (
 		<div className="container text-center mx-auto">
-			<h2 className="text-center m-2">Seasons</h2>
+			<h2 className="text-center m-2 text-danger">Seasons</h2>
 			<Link
 				to={{
 					pathname: "/product/christmas"
