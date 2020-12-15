@@ -6,7 +6,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			products: [
 				{
-					name: "Christmas Tree",
+					name: "Test",
 					price: 10.99,
 					picture:
 						"https://i5.walmartimages.com/asr/ce2c5382-67f8-4297-b651-b1848678baae_1.1a8c73ae11c3b5565d4a5f1dd8249483.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
@@ -28,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					season: "christmas"
 				},
 				{
-					name: "Christmas Sweater T-Shirt",
+					name: "Christmas Sweater",
 					price: 12.99,
 					picture:
 						"https://i5.walmartimages.com/asr/3febb163-a1f3-4964-b87f-d5ead987d7fc_1.d619cbd0140a874f4d8d6dcdea72a03f.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
@@ -39,7 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					season: "christmas"
 				},
 				{
-					name: "Ho Ho Ho Yall",
+					name: "Test",
 					price: 13.99,
 					picture:
 						"https://i5.walmartimages.com/asr/f34b6353-f8f1-4435-af3e-7098850bb120_1.8ee0faec12f225ca8d10e5c57f4fe6ce.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff",
@@ -53,8 +53,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					name: "Fifth",
 					price: 14.99,
 					picture: "https://via.placeholder.com/150",
-					short_description: "short5",
-					long_description: "long5",
+					short_description: "Unisex Cupid Shark T-shirt in Blue",
+					long_description:
+						"Unisex Tried My Best T-shirt. 100% Cotton. Red. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 5,
 					season: "newyears"
 				},
@@ -86,38 +87,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 					season: "newyears"
 				},
 				{
-					name: "Ninth",
+					name: "Test",
 					price: 18.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short9",
-					long_description: "long9",
+					picture:
+						"https://res.cloudinary.com/teepublic/image/private/s--mHhQ_OPV--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_0/g_north_west,u_upload:v1462829022:production:blanks:beqtwr2j6utublaobvi0,x_-395,y_-325/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1454737874/production/designs/413912_1.jpg",
+					short_description: "Unisex Cupid Shark T-shirt in Blue",
+					long_description:
+						"Unisex Cupid Shark T-shirt. 100% Cotton. Blue. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 9,
 					season: "valentines"
 				},
 				{
-					name: "Tenth",
+					name: "Hug Me Teddy Bear",
 					price: 19.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short10",
-					long_description: "long10",
+					picture:
+						"https://res.cloudinary.com/teepublic/image/private/s--0I7-985l--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,h_470/c_crop,g_north_west,h_626,w_470,x_-107,y_0/g_north_west,u_upload:v1462829024:production:blanks:a59x1cgomgu5lprfjlmi,x_-502,y_-325/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1578944320/production/designs/7561500_0.jpg",
+					short_description: "Unisex Hug Me Teddy Bear T-shirt in White",
+					long_description:
+						"Unisex Hug Me Teddy Bear T-shirt. 100% Cotton. White. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 10,
 					season: "valentines"
 				},
 				{
-					name: "Eleventh",
+					name: "Disco Happy Valentine's",
 					price: 20.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short11",
-					long_description: "long11",
+					picture:
+						"https://res.cloudinary.com/teepublic/image/private/s--DciPOpFX--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_409/c_crop,g_north_west,h_626,w_470,x_-31,y_-7/g_north_west,u_upload:v1462829015:production:blanks:mtl53ofohwq5goqjo9ke,x_-426,y_-332/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1580938519/production/designs/7852769_0.jpg",
+					short_description: "Unisex Disco Happy Valentine's T-shirt in Black",
+					long_description:
+						"Unisex Disco Happy Valentine's T-shirt. 100% Cotton. Black. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 11,
 					season: "valentines"
 				},
 				{
-					name: "Twelfth",
+					name: "Test",
 					price: 21.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short12",
-					long_description: "long12",
+					picture:
+						"https://res.cloudinary.com/teepublic/image/private/s--hQJDO31d--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_0/g_north_west,u_upload:v1462829015:production:blanks:mtl53ofohwq5goqjo9ke,x_-395,y_-325/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1550362267/production/designs/4220109_0.jpg",
+					short_description: "Unisex Ladybug Hearts T-shirt in Black",
+					long_description:
+						"Unisex Ladybug Hearts T-shirt. 100% Cotton. Black. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 12,
 					season: "valentines"
 				}

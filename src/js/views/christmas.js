@@ -22,14 +22,14 @@ export const Christmas = () => {
 						pathname: "/product/newyears"
 					}}
 					className="col-6 text-center">
-					<button className="btn btn-danger">Check Out Our New Year&#39;s Eve T-Shirts</button>
+					<button className="btn btn-info">Check Out Our New Year&#39;s Eve T-Shirts</button>
 				</Link>
 				<Link
 					to={{
 						pathname: "/product/valentines"
 					}}
 					className="col-6 text-center">
-					<button className="btn btn-danger">Check Out Our Valentine&#39;s Day T-Shirts</button>
+					<button className="btn btn-info">Check Out Our Valentine&#39;s Day T-Shirts</button>
 				</Link>
 			</div>
 		</div>

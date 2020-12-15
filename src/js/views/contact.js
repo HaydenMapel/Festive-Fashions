@@ -41,7 +41,7 @@ export const Contact = () => {
 	return (
 		<div className="container-fluid h-100 blackBG">
 			<div className="container pb-5 pt-3 px-5 text-light m-5 mx-auto">
-				<h2 className="text-center">Contact Us</h2>
+				<h2 className="text-center pinkText">Contact Us</h2>
 				<form onSubmit={sendEmail} className="mx-5">
 					<div className="form-group">
 						<label>Name</label>
@@ -83,7 +83,7 @@ export const Contact = () => {
 							onChange={e => setMessage(e.target.value)}
 						/>
 					</div>
-					<button className="mt-4 btn btn-danger rounded-pill btn-block mx-auto" type="submit">
+					<button className="mt-4 btn btn-info rounded-pill btn-block mx-auto" type="submit">
 						Submit form
 					</button>
 				</form>
