@@ -2,8 +2,10 @@ import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import newYear from "../../img/new_years_landing_page.png";
 import winter from "../../img/christmas_landing_page.png";
+import valentine from "../../img/valentine_landing_page.png";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
+import Button from "react-bootstrap/Button";
 
 import Carousel from "react-bootstrap/Carousel";
 
@@ -15,7 +17,13 @@ export const Home = () => (
 				{/* <button className="caruselButton">Shop Now!</button> */}
 				<Carousel.Caption>
 					<Link to="/product" className="linkInlandingPage">
-						<h3 className="shopNowLink">Shop Now!</h3>
+						<div className="row">
+							<div className="col sm">
+								<Button className="shopNowLink" size="lg">
+									Shop Now!
+								</Button>{" "}
+							</div>
+						</div>
 					</Link>
 				</Carousel.Caption>
 			</Carousel.Item>
@@ -23,7 +31,19 @@ export const Home = () => (
 				<img className="d-block w-100" src={newYear} alt="Third slide" />
 				<Carousel.Caption interval={1000}>
 					<Link to="/product" className="linkInlandingPage">
-						<h3 className="shopNowLink">Shop Now!</h3>
+						<Button className="shopNowLink" size="lg">
+							Shop Now!
+						</Button>{" "}
+					</Link>
+				</Carousel.Caption>
+			</Carousel.Item>
+			<Carousel.Item>
+				<img className="d-block w-100" src={valentine} alt="Third slide" />
+				<Carousel.Caption interval={1000}>
+					<Link to="/product" className="linkInlandingPage">
+						<Button className="shopNowLink" size="lg">
+							Shop Now!
+						</Button>{" "}
 					</Link>
 				</Carousel.Caption>
 			</Carousel.Item>

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { SignOutButton } from "./signOutButton.js";
 import { GoogleLogout } from "react-google-login";
+import Image from "react-bootstrap/Image";
+import logo from "../../img/logoResized.png";
 import "../../styles/home.scss";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -61,10 +63,11 @@ export const NavbarComp = props => {
 	return (
 		<Navbar expand="lg" variant="dark" fixed="top">
 			<div className="container">
+				{/* <div className="logo">
+					<Image src={logo} roundedCircle />
+				</div> */}
 				<Navbar.Brand>
-					<Link to="/" className="navText">
-						Logo
-					</Link>
+					<h2 className="logo">Festive Fashion</h2>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
