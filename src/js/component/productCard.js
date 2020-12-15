@@ -47,18 +47,18 @@ export const ProductCard = props => {
 	}
 
 	return (
-		<div className="card col-6 my-3 border-0">
+		<div className="card col-10 col-md-5 m-3 border-0">
 			<div className="card-body text-center font-weight-bold">
 				<Link
-					className=" card-title h5"
+					className="card-title h5 text-decoration-none"
 					to={{
 						pathname: "/product/" + props.product.ID
 					}}>
-					<h5 className="card-title">{props.product.name}</h5>
+					<h5 className="card-title text-dark">{props.product.name}</h5>
 					<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
 				</Link>
 				<div>${props.product.price}</div>
-				<p className="card-text text-left font-weight-normal">{props.product.short_description}</p>
+				<p className="card-text text-center font-weight-normal">{props.product.short_description}</p>
 				<Link
 					to={{
 						pathname: "/product/" + props.product.ID

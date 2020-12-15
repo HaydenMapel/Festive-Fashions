@@ -26,10 +26,12 @@
 #fullPageContainer {
     
 }
-// About Page CSS
-#aboutContainer {
-
+// Used to fix the footer to the bottom with flexbox
+.bodyInLayout {
+    width: auto;
+    flex: 1 0 auto;
 }
+
 
 
 //define the background color in the body and adjust the visibility of the body blocked by navbar with the paddig 
@@ -43,41 +45,20 @@ body{
 .footer{
     background-color: black;
     color: white;
-    position:sticky;
-    bottom: 0;
-    width: 100%;
-}
-.footer-copyright{
-    background-color: #263238;
-}
-.list-unstyled{
-    display: inline;
-}
-.footer-ul{
-    padding-left: 0px;
-}
-.footer-ul li a{
-    background-image: linear-gradient(to bottom left, rgb(247, 3, 174), rgb(243, 136, 211));
-    height: 40px;
-    width: 40px;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  
-}
-#MDBFooter{
     border-top: 2px solid rgb(247, 3, 174);
+    flex-shrink: 0;
 }
 
-//adjust the span feColor
-span{
-    color:rgb(252, 5, 169);;
-    font-size: medium;
-    cursor: pointer;
+// css for footer social media badges
+.socialMediaBadges{
+    background-image: linear-gradient(to bottom left, rgb(247, 3, 174), rgb(243, 136, 211));
+    height: auto;
+    width: 30px;
+    color: white;
+    padding: 5px;
+    text-align: center;
 }
+
 //adjust form title
 .titleForm{
     color: rgb(252, 5, 169);
@@ -119,10 +100,6 @@ span{
 }
 .linkInlandingPage:link{
     text-decoration: none;
-}
-.carousel-caption{
-  //max-width: 200px;
-  margin: auto;
 }
 
 //cards in productList
@@ -216,3 +193,7 @@ img {
     margin-block: 30px;
 }
 
+.carousel-caption {
+  width: 200px;
+  margin: auto;
+}

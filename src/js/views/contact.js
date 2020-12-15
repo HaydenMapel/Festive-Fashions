@@ -40,9 +40,9 @@ export const Contact = () => {
 
 	return (
 		<div className="container-fluid h-100 blackBG">
-			<div className="container darkBG pb-5 pt-3 px-5 text-light m-4 mx-auto">
+			<div className="container pb-5 pt-3 px-5 text-light m-5 mx-auto">
 				<h2 className="text-center">Contact Us</h2>
-				<form onSubmit={sendEmail}>
+				<form onSubmit={sendEmail} className="mx-5">
 					<div className="form-group">
 						<label>Name</label>
 						<input

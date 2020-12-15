@@ -5,48 +5,43 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBBtn, MDBIcon } from "mdbrea
 
 export const Footer = () => {
 	return (
-		<MDBFooter id="MDBFooter" color="blue" className="font-small pt-4 footer ">
-			<MDBContainer fluid className="text-center text-md-left">
-				<MDBRow>
-					<MDBCol md="3">
-						<h5 className="title">Follow Us</h5>
-						<ul className="footer-ul">
-							<li className="list-unstyled">
-								<a href="#!" className="fb-ic mr-3">
-									<MDBIcon fab icon="facebook-f" />
-								</a>
-							</li>
-							<li className="list-unstyled">
-								<a href="#!" className="tw-ic mr-3">
-									<MDBIcon fab icon="twitter" />
-								</a>
-							</li>
-							<li className="list-unstyled">
-								<a href="#!" className="li-ic mr-3">
-									<MDBIcon fab icon="linkedin-in" />
-								</a>
-							</li>
-							<li className="list-unstyled">
-								<a href="#!" className="ins-ic mr-3">
-									<MDBIcon fab icon="instagram" />
-								</a>
-							</li>
-						</ul>
-					</MDBCol>
-					<MDBCol md="3">
-						<h5>CountDown</h5>
-					</MDBCol>
-					<MDBCol md="3">
-						<Link to="/contact">Contact Us</Link>
-					</MDBCol>
-				</MDBRow>
-			</MDBContainer>
-			<div className="footer-copyright text-center py-3">
-				<MDBContainer fluid>
-					&copy; {new Date().getFullYear()} Copyright:{" "}
-					<a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
-				</MDBContainer>
+		<div className="footer container-fluid pt-1">
+			<div className="row">
+				<div className="col-4">
+					<div className="row"></div>
+					<div className="mr-3 d-none d-md-inline-block">Follow Us</div>
+					<ul className="d-inline-block p-0">
+						<li className="d-inline-block col-2">
+							<div className="rounded-circle mr-3 socialMediaBadges">
+								<i className="fab fa-facebook-f"></i>
+							</div>
+						</li>
+						<li className="d-inline-block col-2">
+							<div className="rounded-circle mr-3 socialMediaBadges">
+								<i className="fab fa-twitter"></i>
+							</div>
+						</li>
+						<li className="d-inline-block col-2">
+							<div className="rounded-circle mr-3 socialMediaBadges ">
+								<i className="fab fa-linkedin-in"></i>
+							</div>
+						</li>
+						<li className="d-inline-block col-2">
+							<div className="rounded-circle mr-3 socialMediaBadges ">
+								<i className="fab fa-instagram"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div className="col-4 justify-content-center d-flex align-items-center">
+					Copyright &copy; {new Date().getFullYear()} Festive Fashions
+				</div>
+				<div className="col-4 justify-content-end d-flex align-items-center">
+					<Link to="/contact" className="navText">
+						Contact Us
+					</Link>
+				</div>
 			</div>
-		</MDBFooter>
+		</div>
 	);
 };

@@ -13,7 +13,7 @@ export const Home = () => (
 	<div>
 		<Carousel>
 			<Carousel.Item interval={1000}>
-				<img className="d-block w-100" src={winter} alt="First slide" />
+				<img className="d-block img-fluid" src={winter} alt="First slide" />
 				{/* <button className="caruselButton">Shop Now!</button> */}
 				<Carousel.Caption>
 					<Link to="/product" className="linkInlandingPage">
@@ -28,7 +28,7 @@ export const Home = () => (
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
-				<img className="d-block w-100" src={newYear} alt="Third slide" />
+				<img className="d-block img-fluid" src={newYear} alt="Third slide" />
 				<Carousel.Caption interval={1000}>
 					<Link to="/product" className="linkInlandingPage">
 						<Button className="shopNowLink" size="lg">

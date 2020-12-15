@@ -6,38 +6,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			products: [
 				{
-					name: "First",
+					name: "Christmas Tree",
 					price: 10.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short1",
-					long_description: "long1",
+					picture:
+						"https://i5.walmartimages.com/asr/ce2c5382-67f8-4297-b651-b1848678baae_1.1a8c73ae11c3b5565d4a5f1dd8249483.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+					short_description: "Woman's Christmas Tree T-shirt in Grey",
+					long_description:
+						"Adult Women's Christmas Tree T-shirt. 100% Cotton. Grey. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 1,
 					season: "christmas"
 				},
 				{
-					name: "Second",
+					name: "Tried My Best",
 					price: 11.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short2",
-					long_description: "long2",
+					picture:
+						"https://i5.walmartimages.com/asr/963c9988-5cd7-4c7d-a185-f63fdd7a0eeb_1.8cbefb4f685cca040c9f8f3804b417f5.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+					short_description: "Unisex Tried My Best T-shirt in Red",
+					long_description:
+						"Unisex Tried My Best T-shirt. 100% Cotton. Red. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 2,
 					season: "christmas"
 				},
 				{
-					name: "Third",
+					name: "Christmas Sweater T-Shirt",
 					price: 12.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short3",
-					long_description: "long3",
+					picture:
+						"https://i5.walmartimages.com/asr/3febb163-a1f3-4964-b87f-d5ead987d7fc_1.d619cbd0140a874f4d8d6dcdea72a03f.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
+					short_description: "Women's Christmas Sweater T-shirt in Red",
+					long_description:
+						"Adult Women's Christmas Tree T-shirt. 100% Cotton. Red. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 3,
 					season: "christmas"
 				},
 				{
-					name: "Fourth",
+					name: "Ho Ho Ho Yall",
 					price: 13.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short4",
-					long_description: "long4",
+					picture:
+						"https://i5.walmartimages.com/asr/f34b6353-f8f1-4435-af3e-7098850bb120_1.8ee0faec12f225ca8d10e5c57f4fe6ce.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff",
+					short_description: "Men's Ho Ho Ho Yall T-shirt in Grey",
+					long_description:
+						"Adult Men's Ho Ho Ho Yall T-shirt. 100% Cotton. Grey. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 4,
 					season: "christmas"
 				},

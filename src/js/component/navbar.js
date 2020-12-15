@@ -63,9 +63,6 @@ export const NavbarComp = props => {
 	return (
 		<Navbar expand="lg" variant="dark" fixed="top">
 			<div className="container">
-				{/* <div className="logo">
-					<Image src={logo} roundedCircle />
-				</div> */}
 				<Navbar.Brand>
 					<h2 className="logo">Festive Fashion</h2>
 				</Navbar.Brand>
@@ -78,13 +75,13 @@ export const NavbarComp = props => {
 							</Link>
 						</Nav.Item>
 						<Nav.Item className="mx-2">
-							<Link to="/about" className="navText">
-								About
+							<Link to="/product" className="navText">
+								Shop
 							</Link>
 						</Nav.Item>
 						<Nav.Item className="mx-2">
-							<Link to="/product" className="navText">
-								Shop
+							<Link to="/about" className="navText">
+								About
 							</Link>
 						</Nav.Item>
 						<Nav.Item>{userPage}</Nav.Item>
