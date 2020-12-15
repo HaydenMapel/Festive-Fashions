@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Iceland');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 .navbar{
     background: rgb(7,33,87);
    background: rgb(2,0,5);
@@ -30,6 +31,9 @@
 .bodyInLayout {
     width: auto;
     flex: 1 0 auto;
+    //the following properties are used to keep the cards in the product page centered
+    display: flex;
+    align-items: center;
 }
 
 
@@ -143,6 +147,11 @@ body{
     height: 375px;
     margin: auto;
 }
+//this will add a pressed effect on click to the cards 
+.card:active{
+    transform: translateY(4px);
+    box-shadow: none;
+}
 .testimonial-card .avatar {
     width: 120px;
     margin-top: -60px;
@@ -176,9 +185,20 @@ img {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.25rem;
+   
+    color: rgb(94, 2, 94);
 }
-.card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+.card-body p{
     font-weight: 400;
+    font-size: large;
+}
+
+
+.card .card-body h1, .card .card-body h2, .card .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+    font-weight: bold;
+    font-family:'Montserrat';
+    font-size: x-large;
+    
 }
 .mt-1, .my-1 {
     margin-top: .25rem !important;

@@ -13,93 +13,88 @@ export const ProductList = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-<<<<<<< HEAD
 		<div className="container">
 			<div className="myContainer">
-				<div className=" card testimonial-card ">
-					{/* <!--Background color--> */}
-					<div className="card-up christmas-gradient"></div>
+				<Link
+					to={{
+						pathname: "/product/christmas"
+					}}
+					style={{ textDecoration: "none" }}>
+					<div className=" card testimonial-card ">
+						{/* <!--Background color--> */}
+						<div className="card-up christmas-gradient"></div>
 
-					{/* <!--Avatar--> */}
-					<div className="avatar mx-auto">
-						<img src={christmas} className="rounded-circle img-responsive" alt="Example photo" />
-					</div>
+						{/* <!--Avatar--> */}
+						<div className="avatar mx-auto">
+							<img src={christmas} className="rounded-circle img-responsive" alt="Example photo" />
+						</div>
 
-					<div className="card-body">
-						{/* <!--Name--> */}
-						<h4 className="card-title mt-1">Christmas</h4>
-						<hr />
-						{/* <!--Quotation--> */}
-						<p>
-							<i className="fa fa-quote-left"></i> Christmas magic is silent. You don&#39;t hear it — you
-							feel it. You know it. You believe it.
-						</p>
+						<div className="card-body">
+							{/* <!--Name--> */}
+							<h4 className="card-title mt-1">Christmas</h4>
+							<hr />
+							{/* <!--Quotation--> */}
+							<p>
+								<i className="fa fa-quote-left"></i> Christmas magic is silent. You don&#39;t hear it —
+								you feel it. You know it. You believe it.
+							</p>
+						</div>
 					</div>
-				</div>
-				<div className=" card testimonial-card ">
-					{/* <!--Background color--> */}
-					<div className="card-up sunny-morning-gradient"></div>
+				</Link>
 
-					{/* <!--Avatar--> */}
-					<div className="avatar mx-auto">
-						<img src={newyears} className="rounded-circle img-responsive" alt="Example photo" />
-					</div>
+				<Link
+					to={{
+						pathname: "/product/newyears"
+					}}
+					style={{ textDecoration: "none" }}>
+					<div className=" card testimonial-card ">
+						{/* <!--Background color--> */}
+						<div className="card-up sunny-morning-gradient"></div>
 
-					<div className="card-body">
-						{/* <!--Name--> */}
-						<h4 className="card-title mt-1">New Year</h4>
-						<hr />
-						{/* <!--Quotation--> */}
-						<p>
-							<i className="fa fa-quote-left"></i> Don’t live the same year 75 times and call it a life.
-						</p>
-					</div>
-				</div>
-				<div className=" card testimonial-card ">
-					{/* <!--Background color--> */}
-					<div className="card-up valentine-gradient"></div>
+						{/* <!--Avatar--> */}
+						<div className="avatar mx-auto">
+							<img src={newyears} className="rounded-circle img-responsive" alt="Example photo" />
+						</div>
 
-					{/* <!--Avatar--> */}
-					<div className="avatar mx-auto">
-						<img src={valentine} className="rounded-circle img-responsive" alt="Example photo" />
+						<div className="card-body">
+							{/* <!--Name--> */}
+							<h4 className="card-title mt-1">New Year</h4>
+							<hr />
+							{/* <!--Quotation--> */}
+							<p>
+								<i className="fa fa-quote-left"></i> Don’t live the same year 75 times and call it a
+								life.
+							</p>
+						</div>
 					</div>
+				</Link>
 
-					<div className="card-body">
-						{/* <!--Name--> */}
-						<h4 className="card-title mt-1">Valentine&#39;s</h4>
-						<hr />
-						{/* <!--Quotation--> */}
-						<p>
-							<i className="fa fa-quote-left"></i> You can&#39;t blame gravity for falling in love.
-						</p>
+				<Link
+					to={{
+						pathname: "/product/valentines"
+					}}
+					style={{ textDecoration: "none" }}>
+					<div className=" card testimonial-card ">
+						{/* <!--Background color--> */}
+						<div className="card-up valentine-gradient"></div>
+
+						{/* <!--Avatar--> */}
+						<div className="avatar mx-auto">
+							<img src={valentine} className="rounded-circle img-responsive" alt="Example photo" />
+						</div>
+
+						<div className="card-body">
+							{/* <!--Name--> */}
+							<h4 className="card-title mt-1">Valentine&#39;s</h4>
+							<hr />
+							{/* <!--Quotation--> */}
+							<p>
+								<i className="fa fa-quote-left"></i> You can&#39;t blame gravity for falling in love.
+							</p>
+						</div>
 					</div>
-				</div>
+				</Link>
 			</div>
-=======
-		<div className="container text-center mx-auto">
-			<h2 className="text-center m-2 pinkText">Seasons</h2>
-			<Link
-				to={{
-					pathname: "/product/christmas"
-				}}
-				className="text-center row mx-auto">
-				<button className="btn btn-info">Check Out Christmas T-Shirts</button>
-			</Link>
-			<Link
-				to={{
-					pathname: "/product/newyears"
-				}}
-				className="text-center row">
-				<button className="btn btn-info">Check Out New Year&#39;s Eve T-Shirts</button>
-			</Link>
-			<Link
-				to={{
-					pathname: "/product/valentines"
-				}}
-				className="text-center row">
-				<button className="btn btn-info">Check Out Valentine&#39;s Day T-Shirts</button>
-			</Link>
->>>>>>> 55066fb3aea63e1d35eaa83c573234cde96ad46e
 		</div>
 
 		//  <div className="container text-center mx-auto">
