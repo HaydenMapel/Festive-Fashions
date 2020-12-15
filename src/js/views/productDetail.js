@@ -52,44 +52,52 @@ export const ProductDetail = () => {
 		<div className="container">
 			<div className="card my-3 border-0">
 				<div className="card-body text-center font-weight-bold">
-					<h5 className="card-title">{product.name}</h5>
-					<img src={product.picture} className="card-img img-fluid mt-3" alt="..." />
-					<div>
-						<Form noValidate onSubmit={addToCart}>
-							<Form.Row className="my-3">
-								<div className="col-6">
-									<div>${product.price}</div>
-									<ToggleButtonGroup type="radio" name="options" className="btn-danger" required>
+					<h5 className="card-title pinkText">{product.name}</h5>
+					<div className="row">
+						<img
+							src={product.picture}
+							className="col-10 col-md-5 mx-auto card-img img-fluid mt-3"
+							alt="..."
+						/>
+						<Form noValidate onSubmit={addToCart} className="mx-auto col-10 col-md-5">
+							<Form.Row className="justify-content-center">
+								<div className="">
+									<Form.Label className="mt-3">Price</Form.Label>
+									<div className="mb-3">${product.price}</div>
+									<div className="mt-3">
+										<Form.Label>Size</Form.Label>
+									</div>
+									<ToggleButtonGroup type="radio" name="options" className="btn-info mb-3" required>
 										<ToggleButton
-											className="btn-danger form-control"
+											className="btn-info form-control"
 											value={"S"}
 											required
 											onChange={e => setSize(e.target.value)}>
 											S
 										</ToggleButton>
 										<ToggleButton
-											className="btn-danger form-control"
+											className="btn-info form-control"
 											value={"M"}
 											required
 											onChange={e => setSize(e.target.value)}>
 											M
 										</ToggleButton>
 										<ToggleButton
-											className="btn-danger form-control"
+											className="btn-info form-control"
 											value={"L"}
 											required
 											onChange={e => setSize(e.target.value)}>
 											L
 										</ToggleButton>
 										<ToggleButton
-											className="btn-danger form-control"
+											className="btn-info form-control"
 											value={"XL"}
 											required
 											onChange={e => setSize(e.target.value)}>
 											XL
 										</ToggleButton>
 									</ToggleButtonGroup>
-									<Form.Group controlId="exampleForm.ControlSelect1">
+									<Form.Group controlId="exampleForm.ControlSelect1" className="my-3">
 										<Form.Label>Quantity</Form.Label>
 										<Form.Control
 											size="sm"
@@ -103,16 +111,21 @@ export const ProductDetail = () => {
 											<option value={5}>5</option>
 										</Form.Control>
 									</Form.Group>
-								</div>
-								<div className="col-6">
-									<button className="btn btn-danger" type="submit">
+									<button className="btn btn-info btn-lg my-3" type="submit">
 										Add to Cart
 									</button>
 								</div>
 							</Form.Row>
 						</Form>
+						<p className="card-text text-left font-weight-normal my-3 mx-5">{product.long_description}</p>
+						<Link
+							to={{
+								pathname: "/product/"
+							}}
+							className="mx-auto text-decoration-none">
+							<button className="btn btn-info">Check Out More T-Shirts</button>
+						</Link>
 					</div>
-					<p className="card-text text-left font-weight-normal">{product.long_description}</p>
 				</div>
 			</div>
 		</div>

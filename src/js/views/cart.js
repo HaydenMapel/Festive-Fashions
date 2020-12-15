@@ -57,14 +57,14 @@ export const Cart = () => {
 
 	return (
 		<div className="container text-light">
-			<h2 className="text-center text-danger">Shopping Cart</h2>
+			<h2 className="text-center pinkText">Shopping Cart</h2>
 			<div className="row mt-3">
 				<div className="col-10 col-lg-7 m-1 mx-auto">{content}</div>
 				<div className="col-10 col-lg-3 card border-0 text-center m-1 mx-auto">
 					<div className="">
-						<div className="m-3 card-text text-dark">Subtotal ${subtotal.toFixed(2)}</div>
-						<div className="m-3 card-text text-dark">Shipping ${shipping.toFixed(2)}</div>
-						<div className="m-3 card-text text-dark font-weight-bold">Total ${totalPrice}</div>
+						<div className="m-3 card-text text-dark">Subtotal: ${subtotal.toFixed(2)}</div>
+						<div className="m-3 card-text text-dark">Shipping: ${shipping.toFixed(2)}</div>
+						<div className="m-3 card-text font-weight-bold pinkText">Total: ${totalPrice}</div>
 					</div>
 					<PayPalButtons key={totalPrice} totalPrice={totalPrice} className="m-3" />
 				</div>

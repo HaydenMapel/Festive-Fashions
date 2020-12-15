@@ -54,7 +54,7 @@ export const ProductCard = props => {
 					to={{
 						pathname: "/product/" + props.product.ID
 					}}>
-					<h5 className="card-title text-dark">{props.product.name}</h5>
+					<h5 className="card-title pinkText">{props.product.name}</h5>
 					<img src={props.product.picture} className="card-img img-fluid mt-3" alt="..." />
 				</Link>
 				<div>${props.product.price}</div>
@@ -63,7 +63,7 @@ export const ProductCard = props => {
 					to={{
 						pathname: "/product/" + props.product.ID
 					}}>
-					<button className="btn btn-danger">Learn more about this product</button>
+					<button className="btn btn-info">Learn more about this product</button>
 				</Link>
 			</div>
 		</div>
