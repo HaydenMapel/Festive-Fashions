@@ -37,7 +37,7 @@ export const Footer = () => {
 					Copyright &copy; {new Date().getFullYear()} Festive Fashions
 				</div>
 				<div className="col-4 justify-content-end d-flex align-items-center">
-					<Link to="/contact" className="navText">
+					<Link to="/contact" className="footercontactText">
 						Contact Us
 					</Link>
 				</div>
