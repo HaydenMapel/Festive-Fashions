@@ -47,7 +47,7 @@ export const ProductCard = props => {
 	}
 
 	return (
-		<div className="card col-10 col-md-5 m-3 border-0">
+		<div className="christmasCards card col-10 col-md-5 m-3 ">
 			<div className="card-body text-center font-weight-bold">
 				<Link
 					className="card-title h5 text-decoration-none"

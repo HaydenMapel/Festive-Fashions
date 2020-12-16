@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import GoogleLogout from "react-google-login";
 import { useHistory } from "react-router-dom";
+import "../../styles/home.scss";
 
 export const SignOutButton = props => {
 	const history = useHistory();
@@ -22,7 +23,7 @@ export const SignOutButton = props => {
 	return (
 		<a
 			href=""
-			className="signOutButton"
+			className="signOutButtonLink"
 			onClick={() => {
 				signOut();
 			}}>

@@ -28,11 +28,14 @@ export const NavbarComp = props => {
 	if (props.loggedInWithGoogle == "true") {
 		//display a google log out button, clear the session storage and redirect the user to the home page
 		action = <SignOutButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />;
+
+		//display user account icon and direct to the user page
 		userPage = (
-			<Link className="mx-2" to={`/userPage/${md5}`}>
-				Account
+			<Link className="mx-2 navText" to={`/userPage/${md5}`}>
+				<i className="fas fa-user-circle"></i>
 			</Link>
 		);
+
 		//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
 	} else if (props.loggedIn !== "true") {
 		action = (
@@ -43,7 +46,7 @@ export const NavbarComp = props => {
 	} else {
 		action = (
 			<button
-				className="loggedOutButton mx-2"
+				className="loggedOutButton"
 				onClick={() => {
 					sessionStorage.clear();
 					let isLoggedIn = sessionStorage.getItem("loggedIn");
@@ -55,7 +58,7 @@ export const NavbarComp = props => {
 		);
 		userPage = (
 			<Link className="mx-2 navText" to={`/userPage/${md5}`}>
-				Account
+				<i className="fas fa-user-circle"></i>
 			</Link>
 		);
 	}

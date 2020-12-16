@@ -21,39 +21,6 @@ export const Login = props => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-	//variables to hold the user info when loging in with google
-	// const [googleUserName, setGoogleUserName] = useState("");
-	// const [googleUserEmail, setGoogleUserEmail] = useState("");
-
-	// //Google response functions
-	// let onSuccess = response => {
-	// 	console.log("[Login successful] response: ", response);
-	// 	//setGoogleUserName(response.profileObj.givenName);
-	// 	//setGoogleUserEmail(response.profileObj.email);
-
-	// 	//if the response is successful then set the logged in in the session storage
-	// 	sessionStorage.setItem("loggedInWithGoogle", true);
-	// 	sessionStorage.setItem("name", response.profileObj.givenName);
-	// 	let md5 = MD5(response.profileObj.googleId).toString();
-	// 	sessionStorage.setItem("md5", md5);
-	// 	props.setLoggedInWithGoogle("true");
-	// 	history.push("/");
-	// 	console.log(sessionStorage);
-	// };
-
-	// let onFailure = response => {
-	// 	console.log("[Login failed] response: ", response);
-	// };
-
-	// let responseGoogle = response => {
-	// 	console.log(response);
-	//     setGoogleUserName(response.profileObj.givenName);
-	//     setGoogleUserEmail(response.profileObj.email)
-
-	//     //if the response is successful then set the logged in in the session storage
-	//     sessionStorage.setItem("loggedIn", true);
-	// };
-
 	//function to submit the sign Up form
 	let handleSubmitSignUp = e => {
 		//if the fields are empty return an alert message
@@ -191,52 +158,17 @@ export const Login = props => {
 							onChange={e => setPassword(e.target.value)}
 						/>
 
-						{/* <div className="d-flex justify-content-around">
-						<div>
-							<div className="custom-control custom-checkbox">
-								<input type="checkbox" className="custom-control-input" id="defaultLoginFormRemember" />
-								<label className="custom-control-label" htmlor="defaultLoginFormRemember">
-									Remember me
-								</label>
-							</div>
-						</div>
-						<div>
-							<a href="">Forgot password?</a>
-						</div>
-					</div> */}
-
 						<button className="btn btn-info btn-block my-4" type="submit">
 							Sign Up
 						</button>
 
 						<p>
 							Do you already have an account?
-							{/* <a href="#signIn">
-							Sign In
-						</a> */}
 							<span onClick={() => props.setHasAccount(!hasAccount)}> Sign In</span>
 						</p>
-
-						{/* <p>or sign in with:</p>
-
-				<a href="#" className="mx-2" role="button">
-					<i className="fab fa-facebook-f light-blue-text"></i>
-				</a>
-				<a href="#" className="mx-2" role="button">
-					<i className="fab fa-twitter light-blue-text"></i>
-				</a>
-				<a href="#" className="mx-2" role="button">
-					<i className="fab fa-linkedin-in light-blue-text"></i>
-				</a>
-				<a href="#" className="mx-2" role="button">
-					<i className="fab fa-github light-blue-text"></i>
-				</a> */}
 					</form>
 				</div>
 			)}
-			{/* <Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link> */}
 		</div>
 	);
 };

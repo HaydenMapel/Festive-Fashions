@@ -21,7 +21,10 @@ export const GoogleSignInButton = props => {
 		sessionStorage.setItem("loggedInWithGoogle", true);
 
 		//store the user name in sessionStorage
+		sessionStorage.setItem("fullName", response.profileObj.name);
 		sessionStorage.setItem("name", response.profileObj.givenName);
+		sessionStorage.setItem("email", response.profileObj.email);
+		sessionStorage.setItem("picture", response.profileObj.imageUrl);
 
 		//hash the user's google id and use that has for a page identifier
 		let md5 = MD5(response.profileObj.googleId).toString();
