@@ -163,20 +163,20 @@ body{
     box-shadow: 4px 4px 11px 0 #f8f9fa;
 }
 .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    // position: relative;
+    // display: -ms-flexbox;
+    // display: flex;
+    // -ms-flex-direction: column;
+    // flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,0.125);
     border-radius: .25rem;
-    width: 300px;
+    // width: 300px;
     height: 375px;
-    margin: auto;
+    // margin: auto;
 }
 //this will add a pressed effect on click to the cards 
 .card:active{
@@ -191,14 +191,14 @@ body{
     border-radius: 50%;
 }
 .ml-auto, .mx-auto {
-    margin-left: auto !important;
+    // margin-left: auto !important;
 }
 .testimonial-card .avatar img {
     width: 100%;
 }
-.rounded-circle {
-    border-radius: 50% !important;
-}
+// .rounded-circle {
+//     border-radius: 50% !important;
+// }
 img {
     vertical-align: middle;
     border-style: none;
@@ -207,15 +207,15 @@ img {
     text-align: center;
 }
 .card-body {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-radius: 0 !important;
+    // padding-top: 1.5rem;
+    // padding-bottom: 1.5rem;
+    // border-radius: 0 !important;
 }
 .card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem;
+    // -ms-flex: 1 1 auto;
+    // flex: 1 1 auto;
+    // min-height: 1px;
+    // padding: 1.25rem;
    
     color: rgb(94, 2, 94);
 }
@@ -238,9 +238,9 @@ img {
     margin-bottom: .75rem;
 }
 .myContainer{
-    display: flex;
-    justify-content: space-between;
-    margin-block: 30px;
+    // display: flex;
+    // justify-content: space-between;
+    // margin-block: 30px;
 }
 
 
