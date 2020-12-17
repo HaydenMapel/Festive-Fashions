@@ -21,7 +21,7 @@ export const ProductList = () => {
 							pathname: "/product/christmas"
 						}}
 						style={{ textDecoration: "none" }}
-						className="col-10 col-md-4 my-3">
+						className="col-8 col-md-4 my-3">
 						<div className="myCard testimonial-card">
 							{/* <!--Background color--> */}
 							<div className="myCard-up christmas-gradient"></div>
@@ -49,7 +49,7 @@ export const ProductList = () => {
 							pathname: "/product/newyears"
 						}}
 						style={{ textDecoration: "none" }}
-						className="col-10 col-md-4 my-3">
+						className="col-8 col-md-4 my-3">
 						<div className="myCard testimonial-card">
 							{/* <!--Background color--> */}
 							<div className="myCard-up sunny-morning-gradient"></div>
@@ -77,7 +77,7 @@ export const ProductList = () => {
 							pathname: "/product/valentines"
 						}}
 						style={{ textDecoration: "none" }}
-						className="col-10 col-md-4 my-3">
+						className="col-8 col-md-4 my-3">
 						<div className="myCard testimonial-card">
 							{/* <!--Background color--> */}
 							<div className="myCard-up valentine-gradient"></div>
