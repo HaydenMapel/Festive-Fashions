@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
 	return (
-		<div className="footer container-fluid pt-1">
+		<div className="footer container-fluid pt-3">
 			<div className="row">
 				<div className="col-4">
 					<div className="row"></div>
@@ -32,10 +32,10 @@ export const Footer = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="col-4 justify-content-center d-flex align-items-center">
+				<div className="col-4 justify-content-center d-flex">
 					Copyright &copy; {new Date().getFullYear()} Festive Fashions
 				</div>
-				<div className="col-4 justify-content-end d-flex align-items-center">
+				<div className="col-4 justify-content-end d-flex">
 					<Link to="/contact" className="footercontactText">
 						Contact Us
 					</Link>

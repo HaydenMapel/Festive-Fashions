@@ -108,10 +108,10 @@ export const Login = props => {
 
 						<p>
 							Do not have an account?
-							{/* <a href="#signUp">
-							Sign Up
-						</a> */}
-							<span onClick={() => props.setHasAccount(!hasAccount)}> Sign Up</span>
+							<span className="pinkText loginCursor" onClick={() => props.setHasAccount(!hasAccount)}>
+								{" "}
+								Sign Up
+							</span>
 						</p>
 
 						<p>or sign in with:</p>
@@ -163,7 +163,10 @@ export const Login = props => {
 
 						<p>
 							Do you already have an account?
-							<span onClick={() => props.setHasAccount(!hasAccount)}> Sign In</span>
+							<span className="pinkText loginCursor" onClick={() => props.setHasAccount(!hasAccount)}>
+								{" "}
+								Sign In
+							</span>
 						</p>
 					</form>
 				</div>
