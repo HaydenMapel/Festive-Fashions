@@ -6,7 +6,7 @@ import { SignOutButton } from "./signOutButton.js";
 import { GoogleLogout } from "react-google-login";
 import Image from "react-bootstrap/Image";
 import logo from "../../img/logoResized.png";
-import "../../styles/home.scss";
+//import "../../styles/home.scss";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 

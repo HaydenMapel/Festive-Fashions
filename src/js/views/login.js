@@ -7,7 +7,7 @@ import { GoogleSignInButton } from "../component/googleSigInButton.js";
 //import { UserPage } from "./userPage";
 import MD5 from "crypto-js/md5";
 //import GoogleLogin from "react-google-login";
-import "../../styles/home.scss";
+//import "../../styles/home.scss";
 
 export const Login = props => {
 	let hasAccount = props.hasAccount;

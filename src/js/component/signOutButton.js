@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import GoogleLogout from "react-google-login";
 import { useHistory } from "react-router-dom";
-import "../../styles/home.scss";
+//import "../../styles/home.scss";
 
 export const SignOutButton = props => {
 	const history = useHistory();

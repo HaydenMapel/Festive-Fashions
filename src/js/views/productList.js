@@ -7,7 +7,7 @@ import christmas from "../../img/christmas_tshirt_main_card.jpeg";
 import valentine from "../../img/valentine_tshirt_main_card.png";
 import newyears from "../../img/newYear_tshirt_main_card.png";
 
-import "../../styles/demo.scss";
+import "../../styles/home.scss";
 
 export const ProductList = () => {
 	const { store, actions } = useContext(Context);

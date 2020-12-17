@@ -17,7 +17,7 @@ import injectContext from "./store/appContext";
 import { NavbarComp } from "./component/navbar";
 import { Footer } from "./component/footer";
 //import "../../styles/home.scss";
-import "../styles/home.scss";
+//import "../styles/home.scss";
 
 //create your first component
 const Layout = () => {
