@@ -4,7 +4,7 @@ import newYear from "../../img/new_years_landing_page.png";
 import winter from "../../img/christmas_landing_page.png";
 import valentine from "../../img/valentine_landing_page.png";
 import { Link } from "react-router-dom";
-import "../../styles/home.scss";
+//import "../../styles/home.scss";
 import Button from "react-bootstrap/Button";
 
 import Carousel from "react-bootstrap/Carousel";
