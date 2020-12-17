@@ -11,7 +11,6 @@ import MD5 from "crypto-js/md5";
 
 export const Login = props => {
 	let hasAccount = props.hasAccount;
-	//const clientID = "186674746870-2ihe83atnv1b8najstagj2u34rqbt5gn.apps.googleusercontent.com";
 	const history = useHistory();
 	const { store, actions } = useContext(Context);
 
