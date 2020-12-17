@@ -1,12 +1,11 @@
 import { bool } from "prop-types";
-//import MD5 from "crypto-js/md5";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			products: [
 				{
-					name: "Test",
+					name: "Test 1",
 					price: 10.99,
 					picture:
 						"https://i5.walmartimages.com/asr/ce2c5382-67f8-4297-b651-b1848678baae_1.1a8c73ae11c3b5565d4a5f1dd8249483.jpeg?odnWidth=undefined&odnHeight=undefined&odnBg=ffffff",
@@ -39,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					season: "christmas"
 				},
 				{
-					name: "Test",
+					name: "Test 4",
 					price: 13.99,
 					picture:
 						"https://i5.walmartimages.com/asr/f34b6353-f8f1-4435-af3e-7098850bb120_1.8ee0faec12f225ca8d10e5c57f4fe6ce.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff",
@@ -50,39 +49,46 @@ const getState = ({ getStore, getActions, setStore }) => {
 					season: "christmas"
 				},
 				{
-					name: "Fifth",
+					name: "Test 2021 Goals",
 					price: 14.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "Unisex Cupid Shark T-shirt in Blue",
+					picture:
+						"https://res.cloudinary.com/teepublic/image/private/s--F7UMZPYe--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_0/g_north_west,u_upload:v1462829015:production:blanks:mtl53ofohwq5goqjo9ke,x_-395,y_-325/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1603651095/production/designs/15412434_0.jpg",
+					short_description: "Unisex 2021 Goals T-shirt in Black",
 					long_description:
-						"Unisex Tried My Best T-shirt. 100% Cotton. Red. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
+						"Unisex 2021 Goals T-shirt. 100% Cotton. Black. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 5,
 					season: "newyears"
 				},
 				{
-					name: "Sixth",
+					name: "Toilet Paper Apocalypse of 2020",
 					price: 15.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short6",
-					long_description: "long6",
+					picture:
+						"https://cdn.shopify.com/s/files/1/0090/5255/3296/products/3_455e698b-68ee-41d7-979a-4376226eabe5_720x.jpg?v=1604473710",
+					short_description: "Unisex I Survived the Toilet Paper Apocalypse of 2020 Funny Sweater",
+					long_description:
+						"Unisex I Survived the Toilet Paper Apocalypse of 2020 sweater. 100% Cotton. Red and Teal. Longsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 6,
 					season: "newyears"
 				},
 				{
-					name: "Seventh",
+					name: "Test Goodbye 2020",
 					price: 16.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short7",
-					long_description: "long7",
+					picture:
+						"https://res.cloudinary.com/teepublic/image/private/s--pnWQDVPu--/t_Resized%20Artwork/c_crop,x_10,y_10/c_fit,w_470/c_crop,g_north_west,h_626,w_470,x_0,y_0/g_north_west,u_upload:v1462829015:production:blanks:mtl53ofohwq5goqjo9ke,x_-395,y_-325/b_rgb:eeeeee/c_limit,f_auto,h_630,q_90,w_630/v1606361598/production/designs/16516695_0.jpg",
+					short_description: "Unisex Goodbye 2020 T-shirt in Black",
+					long_description:
+						"Unisex Goodbye 2020 T-shirt. 100% Cotton. Black. Shortsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 7,
 					season: "newyears"
 				},
 				{
-					name: "Eigth",
+					name: "Happy New Year Whale",
 					price: 17.99,
-					picture: "https://via.placeholder.com/150",
-					short_description: "short8",
-					long_description: "long8",
+					picture:
+						"https://www.vineyardvines.com/dw/image/v2/AAHW_PRD/on/demandware.static/-/Sites-vineyardvines-master/default/dw170017b5/images/2020/1V012958_100_LD_B.jpg?sw=1680&sh=2000&sm=cut",
+					short_description: "Men's Happy New Year Whale Longsleeve T-shirt in White",
+					long_description:
+						"Men's Happy New Year Whale T-shirt. 100% Cotton. White. Longsleeve. Made in the USA. Machine-washable. Available in sizes small to extra-large.",
 					ID: 8,
 					season: "newyears"
 				},

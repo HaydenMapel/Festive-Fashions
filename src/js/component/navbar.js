@@ -64,9 +64,9 @@ export const NavbarComp = props => {
 	}
 
 	return (
-		<Navbar expand="lg" variant="dark" fixed="top">
-			<div className="container">
-				<Navbar.Brand>
+		<Navbar expand="md" variant="dark" fixed="top">
+			<div className="container-fluid mx-2">
+				<Navbar.Brand className="mr-auto">
 					<h2 className="logo">Festive Fashion</h2>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -89,7 +89,7 @@ export const NavbarComp = props => {
 						</Nav.Item>
 						<Nav.Item>{userPage}</Nav.Item>
 						<Nav.Item className="mx-2 navText">{action}</Nav.Item>
-						<Nav.Item className="mx-2">
+						<Nav.Item className="mx-2 pt-1">
 							<Link to="/cart">
 								<i className="fas fa-shopping-cart navText" />
 							</Link>

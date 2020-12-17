@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBBtn, MDBIcon } from "mdbreact";
 
 export const Footer = () => {
 	return (
@@ -37,7 +36,7 @@ export const Footer = () => {
 					Copyright &copy; {new Date().getFullYear()} Festive Fashions
 				</div>
 				<div className="col-4 justify-content-end d-flex align-items-center">
-					<Link to="/contact" className="navText">
+					<Link to="/contact" className="footercontactText">
 						Contact Us
 					</Link>
 				</div>

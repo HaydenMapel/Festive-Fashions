@@ -11,8 +11,18 @@
 }
 .navText{
     color: white;
+    font-size: 1.4rem;
 }
 .navText:hover{
+    text-decoration: none;
+    color: whitesmoke;
+    text-shadow:5px 5px 5px whitesmoke;
+}
+// footer contact link
+.footercontactText{
+    color: white;
+}
+.footercontactText:hover{
     text-decoration: none;
     color: whitesmoke;
     text-shadow:5px 5px 5px whitesmoke;
