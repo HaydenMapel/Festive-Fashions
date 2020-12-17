@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/home.scss";
+//import "../../styles/home.scss";
 
 export const Footer = () => {
 	return (

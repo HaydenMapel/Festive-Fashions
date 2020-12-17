@@ -4,7 +4,7 @@ import { ProductCard } from "../component/productCard.js";
 import { ScrollToTop } from "../component/scrollToTop.js";
 import { Context } from "../store/appContext";
 
-import "../../styles/demo.scss";
+//import "../../styles/demo.scss";
 
 export const Christmas = () => {
 	const { store, actions } = useContext(Context);

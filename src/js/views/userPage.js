@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import { LogIn } from "./login";
 import Card from "react-bootstrap/Card";
-import "../../styles/home.scss";
+//import "../../styles/home.scss";
 
 export const UserPage = props => {
 	//grab the user ID from pops when sign in
@@ -35,7 +35,7 @@ export const UserPage = props => {
 
 	if (isLoggedInWithGoogle) {
 		result = (
-			<Card id="cardInUserPage" style={{ width: "18rem" }}>
+			<Card className="cardInUserPage" style={{ width: "18rem" }}>
 				<Card.Img variant="top" src={picture} />
 				<Card.Body>
 					<Card.Title>ACCOUNT</Card.Title>

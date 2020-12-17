@@ -7,7 +7,7 @@ import christmas from "../../img/christmas_tshirt_main_card.jpeg";
 import valentine from "../../img/valentine_tshirt_main_card.png";
 import newyears from "../../img/newYear_tshirt_main_card.png";
 
-import "../../styles/demo.scss";
+import "../../styles/productListPageStyle.scss";
 
 export const ProductList = () => {
 	const { store, actions } = useContext(Context);
@@ -22,18 +22,18 @@ export const ProductList = () => {
 						}}
 						style={{ textDecoration: "none" }}
 						className="col-10 col-md-4 my-3">
-						<div className=" card testimonial-card">
+						<div className="myCard testimonial-card">
 							{/* <!--Background color--> */}
-							<div className="card-up christmas-gradient"></div>
+							<div className="myCard-up christmas-gradient"></div>
 
 							{/* <!--Avatar--> */}
 							<div className="avatar mx-auto">
 								<img src={christmas} className="rounded-circle img-responsive" alt="Example photo" />
 							</div>
 
-							<div className="card-body">
+							<div className="myCard-body">
 								{/* <!--Name--> */}
-								<h4 className="card-title mt-1">Christmas</h4>
+								<h4 className="myCard-title mt-1">Christmas</h4>
 								<hr />
 								{/* <!--Quotation--> */}
 								<p>
@@ -50,18 +50,18 @@ export const ProductList = () => {
 						}}
 						style={{ textDecoration: "none" }}
 						className="col-10 col-md-4 my-3">
-						<div className=" card testimonial-card">
+						<div className="myCard testimonial-card">
 							{/* <!--Background color--> */}
-							<div className="card-up sunny-morning-gradient"></div>
+							<div className="myCard-up sunny-morning-gradient"></div>
 
 							{/* <!--Avatar--> */}
 							<div className="avatar mx-auto">
 								<img src={newyears} className="rounded-circle img-responsive" alt="Example photo" />
 							</div>
 
-							<div className="card-body">
+							<div className="myCard-body">
 								{/* <!--Name--> */}
-								<h4 className="card-title mt-1">New Year</h4>
+								<h4 className="myCard-title mt-1">New Year</h4>
 								<hr />
 								{/* <!--Quotation--> */}
 								<p>
@@ -78,18 +78,18 @@ export const ProductList = () => {
 						}}
 						style={{ textDecoration: "none" }}
 						className="col-10 col-md-4 my-3">
-						<div className=" card testimonial-card">
+						<div className="myCard testimonial-card">
 							{/* <!--Background color--> */}
-							<div className="card-up valentine-gradient"></div>
+							<div className="myCard-up valentine-gradient"></div>
 
 							{/* <!--Avatar--> */}
 							<div className="avatar mx-auto">
 								<img src={valentine} className="rounded-circle img-responsive" alt="Example photo" />
 							</div>
 
-							<div className="card-body">
+							<div className="myCard-body">
 								{/* <!--Name--> */}
-								<h4 className="card-title mt-1">Valentine&#39;s</h4>
+								<h4 className="myCard-title mt-1">Valentine&#39;s</h4>
 								<hr />
 								{/* <!--Quotation--> */}
 								<p>
