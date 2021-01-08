@@ -67,16 +67,18 @@ export const NavbarComp = props => {
 		<Navbar expand="md" variant="dark" fixed="top">
 			<div className="container-fluid mx-2">
 				<Navbar.Brand className="mr-auto">
-					<h2 className="logo">Festive Fashion</h2>
+					<Link to="/" className="text-decoration-none">
+						<h2 className="logo">Festive Fashions</h2>
+					</Link>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto">
-						<Nav.Item className="mx-2">
+						{/* <Nav.Item className="mx-2">
 							<Link to="/" className="navText">
 								Home
 							</Link>
-						</Nav.Item>
+						</Nav.Item> */}
 						<Nav.Item className="mx-2">
 							<Link to="/product" className="navText">
 								Shop
@@ -89,7 +91,7 @@ export const NavbarComp = props => {
 						</Nav.Item>
 						<Nav.Item>{userPage}</Nav.Item>
 						<Nav.Item className="mx-2 navText">{action}</Nav.Item>
-						<Nav.Item className="mx-2 pt-1">
+						<Nav.Item className="mx-2 pt-2">
 							<Link to="/cart">
 								<i className="fas fa-shopping-cart navText" />
 							</Link>

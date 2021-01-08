@@ -28,7 +28,11 @@ export const ProductList = () => {
 
 							{/* <!--Avatar--> */}
 							<div className="avatar mx-auto">
-								<img src={christmas} className="rounded-circle img-responsive" alt="Example photo" />
+								<img
+									src={christmas}
+									className="myImg rounded-circle img-responsive"
+									alt="Example photo"
+								/>
 							</div>
 
 							<div className="myCard-body">
@@ -56,7 +60,11 @@ export const ProductList = () => {
 
 							{/* <!--Avatar--> */}
 							<div className="avatar mx-auto">
-								<img src={newyears} className="rounded-circle img-responsive" alt="Example photo" />
+								<img
+									src={newyears}
+									className="myImg rounded-circle img-responsive"
+									alt="Example photo"
+								/>
 							</div>
 
 							<div className="myCard-body">
@@ -84,7 +92,11 @@ export const ProductList = () => {
 
 							{/* <!--Avatar--> */}
 							<div className="avatar mx-auto">
-								<img src={valentine} className="rounded-circle img-responsive" alt="Example photo" />
+								<img
+									src={valentine}
+									className="myImg rounded-circle img-responsive"
+									alt="Example photo"
+								/>
 							</div>
 
 							<div className="myCard-body">
