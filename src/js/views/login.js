@@ -4,10 +4,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import { GoogleSignInButton } from "../component/googleSigInButton.js";
-//import { UserPage } from "./userPage";
 import MD5 from "crypto-js/md5";
-//import GoogleLogin from "react-google-login";
-//import "../../styles/home.scss";
 
 export const Login = props => {
 	let hasAccount = props.hasAccount;
