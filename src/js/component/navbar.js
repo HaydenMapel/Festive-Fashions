@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { SignOutButton } from "./signOutButton.js";
 import { GoogleLogout } from "react-google-login";
 import Image from "react-bootstrap/Image";
 import logo from "../../img/logoResized.png";
 //import "../../styles/home.scss";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import app from "../base";
+import { AuthContext } from "../store/authContext";
 
 export const NavbarComp = props => {
-	// const history = useHistory();
-	// let action = "";
+	const history = useHistory();
+	let action = "";
+	const { currentUser } = useContext(AuthContext);
+
 	// let userPage = "";
 	// let md5 = sessionStorage.getItem("md5");
 
@@ -35,9 +38,24 @@ export const NavbarComp = props => {
 	// 			<i className="fas fa-user-circle"></i>
 	// 		</Link>
 	// 	);
-
+	let logoutButton = () => {
+		app.auth().signOut();
+		history.push("/");
+	};
 	// 	//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
-	// } else if (props.loggedIn !== "true") {
+	if (currentUser) {
+		action = (
+			<button className="btn btn-info btn-sm" onClick={logoutButton}>
+				Log Out
+			</button>
+		);
+	} else {
+		action = (
+			<Link to="/login" className="navText">
+				Login
+			</Link>
+		);
+	}
 	// 	action = (
 	// 		<Link to="/logIn" className="navText">
 	// 			Login
@@ -85,11 +103,7 @@ export const NavbarComp = props => {
 							</Link>
 						</Nav.Item>
 						{/* <Nav.Item>{userPage}</Nav.Item> */}
-						<Nav.Item className="mx-2 navText">
-							<Link to="/login" className="navText">
-								Login
-							</Link>
-						</Nav.Item>
+						<Nav.Item className="mx-2 navText">{action}</Nav.Item>
 						<Nav.Item className="mx-2 pt-2">
 							<Link to="/cart">
 								<i className="fas fa-shopping-cart navText" />

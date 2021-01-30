@@ -8,7 +8,7 @@ import { NewYears } from "./views/newYears";
 import { Valentines } from "./views/valentines";
 import { ProductDetail } from "./views/productDetail";
 import { Cart } from "./views/cart";
-import { Login } from "./views/login";
+import Login from "./views/login";
 import Register from "./views/register";
 import { About } from "./views/about";
 import { Contact } from "./views/contact";

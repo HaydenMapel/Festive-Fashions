@@ -224,14 +224,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			isUser: (email, password) => {
 				//getActions.loadSomeData();
 				const users = getStore().users;
-				console.log(users);
+				// console.log(users);
 
 				//id = parseInt(id);
 				let user = false;
 
 				users.forEach(element => {
-					console.log(element.email);
-					console.log(email);
+					// console.log(element.email);
+					// console.log(email);
 
 					if (email === element.email && password === element.password) {
 						// if (email === element.email) {
@@ -252,14 +252,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 							// if (email === element.email) {
 
 							userID = element.ID;
-							console.log(userID);
+							// console.log(userID);
 							// return user;
 						}
 						// else {
 						// 	userID = null;
 						// }
 					});
-					console.log(userID);
+					// console.log(userID);
 					return userID;
 				}
 			},
@@ -308,19 +308,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 							//add ID to LOCAL STORAGE
 							localStorage.setItem(email, ID);
-							console.log(localStorage);
+							// console.log(localStorage);
 							newUser.ID = ID;
 							//add a new user to store
 							store.users = [...store.users, newUser];
 							// Updat the store
 							setStore(store);
-							console.log(store.users);
+							// console.log(store.users);
 						})
 						.catch(error => {
 							console.log(error);
 						});
 				}
-				console.log(isSameEmail);
+				// console.log(isSameEmail);
 
 				return isSameEmail;
 			}

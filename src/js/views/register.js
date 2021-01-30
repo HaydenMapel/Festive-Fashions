@@ -36,13 +36,13 @@ const Register = ({ history }) => {
 					className="form-control mb-4"
 					placeholder="Password"
 				/>
-				<input
+				{/* <input
 					type="password"
 					name="passwordConfirm"
 					id="defaultLoginFormPasswordConfirm"
 					className="form-control mb-4"
 					placeholder="Confirm Password"
-				/>
+				/> */}
 
 				<button className="btn btn-info btn-block my-4" type="submit">
 					Sign Up
