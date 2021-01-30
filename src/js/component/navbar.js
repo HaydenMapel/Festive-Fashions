@@ -11,57 +11,57 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
 export const NavbarComp = props => {
-	const history = useHistory();
-	let action = "";
-	let userPage = "";
-	let md5 = sessionStorage.getItem("md5");
+	// const history = useHistory();
+	// let action = "";
+	// let userPage = "";
+	// let md5 = sessionStorage.getItem("md5");
 
-	let logout = () => {
-		//display a successful google response
-		console.log("[Logout successful] response: ", response);
+	// let logout = () => {
+	// 	//display a successful google response
+	// 	console.log("[Logout successful] response: ", response);
 
-		//display aler message
-		alert("You just Logged Out! ", <i className="fas fa-check-circle"></i>);
-	};
+	// 	//display aler message
+	// 	alert("You just Logged Out! ", <i className="fas fa-check-circle"></i>);
+	// };
 
-	//check if user logged in with google
-	if (props.loggedInWithGoogle == "true") {
-		//display a google log out button, clear the session storage and redirect the user to the home page
-		action = <SignOutButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />;
+	// //check if user logged in with google
+	// if (props.loggedInWithGoogle == "true") {
+	// 	//display a google log out button, clear the session storage and redirect the user to the home page
+	// 	action = <SignOutButton setLoggedInWithGoogle={props.setLoggedInWithGoogle} />;
 
-		//display user account icon and direct to the user page
-		userPage = (
-			<Link className="mx-2 navText" to={`/userPage/${md5}`}>
-				<i className="fas fa-user-circle"></i>
-			</Link>
-		);
+	// 	//display user account icon and direct to the user page
+	// 	userPage = (
+	// 		<Link className="mx-2 navText" to={`/userPage/${md5}`}>
+	// 			<i className="fas fa-user-circle"></i>
+	// 		</Link>
+	// 	);
 
-		//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
-	} else if (props.loggedIn !== "true") {
-		action = (
-			<Link to="/logIn" className="navText">
-				Login
-			</Link>
-		);
-	} else {
-		action = (
-			<button
-				className="loggedOutButton"
-				onClick={() => {
-					sessionStorage.clear();
-					let isLoggedIn = sessionStorage.getItem("loggedIn");
-					props.setLoggedIn(isLoggedIn);
-					history.push("/");
-				}}>
-				LogOut
-			</button>
-		);
-		userPage = (
-			<Link className="mx-2 navText" to={`/userPage/${md5}`}>
-				<i className="fas fa-user-circle"></i>
-			</Link>
-		);
-	}
+	// 	//if the user does't use google to sign in, check if the user is logged in to display regular login or logout button on navBar
+	// } else if (props.loggedIn !== "true") {
+	// 	action = (
+	// 		<Link to="/logIn" className="navText">
+	// 			Login
+	// 		</Link>
+	// 	);
+	// } else {
+	// 	action = (
+	// 		<button
+	// 			className="loggedOutButton"
+	// 			onClick={() => {
+	// 				sessionStorage.clear();
+	// 				let isLoggedIn = sessionStorage.getItem("loggedIn");
+	// 				props.setLoggedIn(isLoggedIn);
+	// 				history.push("/");
+	// 			}}>
+	// 			LogOut
+	// 		</button>
+	// 	);
+	// 	userPage = (
+	// 		<Link className="mx-2 navText" to={`/userPage/${md5}`}>
+	// 			<i className="fas fa-user-circle"></i>
+	// 		</Link>
+	// 	);
+	// }
 
 	return (
 		<Navbar expand="md" variant="dark" fixed="top">
@@ -74,11 +74,6 @@ export const NavbarComp = props => {
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ml-auto">
-						{/* <Nav.Item className="mx-2">
-							<Link to="/" className="navText">
-								Home
-							</Link>
-						</Nav.Item> */}
 						<Nav.Item className="mx-2">
 							<Link to="/product" className="navText">
 								Shop
@@ -89,8 +84,12 @@ export const NavbarComp = props => {
 								About
 							</Link>
 						</Nav.Item>
-						<Nav.Item>{userPage}</Nav.Item>
-						<Nav.Item className="mx-2 navText">{action}</Nav.Item>
+						{/* <Nav.Item>{userPage}</Nav.Item> */}
+						<Nav.Item className="mx-2 navText">
+							<Link to="/login" className="navText">
+								Login
+							</Link>
+						</Nav.Item>
 						<Nav.Item className="mx-2 pt-2">
 							<Link to="/cart">
 								<i className="fas fa-shopping-cart navText" />
@@ -103,9 +102,9 @@ export const NavbarComp = props => {
 	);
 };
 
-NavbarComp.propTypes = {
-	loggedIn: PropTypes.string,
-	setLoggedIn: PropTypes.func,
-	loggedInWithGoogle: PropTypes.string,
-	setLoggedInWithGoogle: PropTypes.func
-};
+// NavbarComp.propTypes = {
+// 	loggedIn: PropTypes.string,
+// 	setLoggedIn: PropTypes.func,
+// 	loggedInWithGoogle: PropTypes.string,
+// 	setLoggedInWithGoogle: PropTypes.func
+// };

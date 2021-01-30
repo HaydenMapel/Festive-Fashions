@@ -90,6 +90,7 @@
 		"react-dom": "^16.14.0",
 		"react-google-login": "^5.1.25",
 		"react-polyfills": "0.0.1",
+		"react-router": "^5.2.0",
 		"react-router-dom": "^5.2.0"
 	}
 }

@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import app from "../base";
 import PropTypes from "prop-types";
 
 export const AuthContext = React.createContext();
 
+export function useAuth() {
+	return useContext(AuthContext);
+}
+
 export const AuthProvider = ({ children }) => {
 	const [currentUser, setCurrentUser] = useState(null);
-	const [pending, setPending] = useState(true);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		app.auth().onAuthStateChanged(user => {
 			setCurrentUser(user);
-			setPending(false);
+			setLoading(false);
 		});
 	}, []);
 
-	if (pending) {
+	if (loading) {
 		return <>Loading...</>;
 	}
 
